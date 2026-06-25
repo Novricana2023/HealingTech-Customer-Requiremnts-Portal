@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-green: #2e7d32;
+  --color-brand-green-light: #4caf50;
+  --color-brand-blue: #007bff;
+  --color-brand-blue-dark: #003366;
+  --color-brand-teal: #0d9488;
+  --color-brand-teal-light: #14b8a6;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: #0f172a;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #2e7d32 0%, #0d9488 50%, #007bff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.hero-gradient {
+  background: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(13, 148, 136, 0.12), transparent),
+    radial-gradient(ellipse 60% 40% at 90% 20%, rgba(0, 123, 255, 0.08), transparent),
+    radial-gradient(ellipse 50% 30% at 10% 60%, rgba(46, 125, 50, 0.06), transparent);
+}
+
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #e2e8f0, transparent);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
