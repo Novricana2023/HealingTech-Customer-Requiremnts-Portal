@@ -12,6 +12,7 @@ import {
   Landmark,
   Workflow,
   Cloud,
+  LayoutGrid,
   LucideIcon,
 } from "lucide-react";
 import { services } from "@/data/site-data";
@@ -27,6 +28,7 @@ const iconMap: Record<string, LucideIcon> = {
   landmark: Landmark,
   workflow: Workflow,
   cloud: Cloud,
+  layout: LayoutGrid,
 };
 
 export default function Services() {
@@ -48,7 +50,8 @@ export default function Services() {
           </h2>
           <p className="mt-4 text-lg text-slate-600">
             After you share your requirements above, HealingTech designs and
-            delivers these types of solutions for organizations like yours.
+            delivers web apps, mobile apps, websites, AI systems, and enterprise
+            platforms for organizations like yours.
           </p>
         </motion.div>
 

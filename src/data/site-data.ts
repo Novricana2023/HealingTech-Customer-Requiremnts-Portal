@@ -16,6 +16,14 @@ export const services = [
     gradient: "from-blue-500 to-cyan-600",
   },
   {
+    id: "webapp",
+    title: "Web Applications",
+    description:
+      "Custom web apps, dashboards, SaaS platforms, admin portals, and browser-based tools built for performance and scale.",
+    icon: "layout",
+    gradient: "from-indigo-500 to-blue-600",
+  },
+  {
     id: "mobile",
     title: "Mobile Application Development",
     description:
@@ -99,18 +107,18 @@ export const requirementCards = [
     description:
       "Business Websites, Government Portals, NGO Websites, Community Platforms, E-Commerce Websites and Customer Portals.",
     instruction: "Tell us about the website you would like us to build.",
-    buttonText: "Open Website Discovery Form",
+    buttonText: "Open Website Requirements Form",
     href: "https://tally.so/r/WOg9VP",
     image: "/images/card-website.png",
     external: true,
   },
   {
     id: "mobile",
-    title: "Mobile Application Development",
+    title: "Web Apps & Mobile Applications",
     description:
-      "Android Applications, iOS Applications, Business Apps, Healthcare Apps, Education Apps and Startup Products.",
-    instruction: "Tell us about the mobile application you would like us to build.",
-    buttonText: "Open Mobile App Discovery Form",
+      "Web Applications, Android Apps, iOS Apps, Progressive Web Apps (PWAs), Business Apps, Healthcare Apps, Education Apps and Startup Products.",
+    instruction: "Tell us about the web app or mobile application you would like us to build.",
+    buttonText: "Open Web & Mobile App Requirements Form",
     href: "https://tally.so/r/obp6PM",
     image: "/images/card-mobile.png",
     external: true,

@@ -12,7 +12,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "HealingTech Systems | Customer Requirements Collection",
   description:
-    "Share your project requirements with HealingTech Systems. Select AI, website, mobile, or ERP services and complete the discovery form so we can design the right solution.",
+    "Share your project requirements with HealingTech Systems. Select AI, website, mobile, or ERP services and complete the requirements form so we can design the right solution.",
   keywords: [
     "HealingTech Systems",
     "HealingTech",

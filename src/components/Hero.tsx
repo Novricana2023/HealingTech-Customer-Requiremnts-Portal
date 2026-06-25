@@ -31,10 +31,10 @@ export default function Hero() {
             </h1>
 
             <p className="mt-5 text-lg text-slate-600 leading-relaxed max-w-xl">
-              Select the service you need, complete the discovery form, and
+              Select the service you need, complete the requirements form, and
               provide as much detail as possible. We use your information to
-              design the right AI, software, mobile, website, or ERP solution
-              for your organization.
+              design the right AI, web apps, mobile apps, websites, software, or ERP
+              solution for your organization.
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
@@ -86,8 +86,8 @@ export default function Hero() {
             <p className="text-center sm:text-left text-slate-700 text-base lg:text-lg leading-relaxed">
               <span className="font-semibold text-brand-teal">This page is for collecting your project information.</span>{" "}
               Choose a service below and open the matching form. The more you
-              tell us, the better we can design the right solution for your
-              organization.
+              tell us, the better we can tailor AI, web apps, mobile apps, websites,
+              or ERP solutions to your needs.
             </p>
           </div>
         </motion.div>
