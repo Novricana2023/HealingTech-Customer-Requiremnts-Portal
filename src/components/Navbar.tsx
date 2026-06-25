@@ -9,7 +9,6 @@ import { motion, AnimatePresence } from "framer-motion";
 const navLinks = [
   { label: "Requirements Forms", href: "#requirements" },
   { label: "What We Build", href: "#services" },
-  { label: "ERP Solutions", href: "/erp-solutions" },
   { label: "Why Us", href: "#why-healingtech" },
 ];
 

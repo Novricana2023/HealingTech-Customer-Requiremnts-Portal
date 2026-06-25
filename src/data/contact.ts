@@ -1,5 +1,6 @@
 export const contactInfo = {
-  email: "novielungu4@gmail.com",
+  emailDisplay: "info@healingtech.mw",
+  emailTo: "novielungu4@gmail.com",
   whatsappNumbers: [
     {
       display: "+254 790 355 947",
@@ -10,7 +11,6 @@ export const contactInfo = {
       phone: "265997441334",
     },
   ],
-  linkedIn: "https://www.linkedin.com/company/healingtech",
 };
 
 export function whatsappUrl(phone: string, message?: string) {

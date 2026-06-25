@@ -7,6 +7,7 @@ import { ArrowLeft, Mail } from "lucide-react";
 import Link from "next/link";
 import { erpProducts } from "@/data/erp-data";
 import ERPModal from "@/components/ERPModal";
+import { contactInfo } from "@/data/contact";
 import type { ERPProduct } from "@/data/erp-data";
 
 export default function ERPSolutionsPage() {
@@ -30,16 +31,13 @@ export default function ERPSolutionsPage() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl"
           >
-            <span className="text-sm font-semibold text-brand-teal uppercase tracking-wider">
-              Enterprise Portfolio
-            </span>
-            <h1 className="mt-3 text-4xl sm:text-5xl font-bold text-slate-900">
-              HealingTech Enterprise Solutions
+            <h1 className="text-4xl sm:text-5xl font-bold text-slate-900">
+              Explore ERP Solutions
             </h1>
             <p className="mt-4 text-lg text-slate-600 leading-relaxed">
-              Explore solutions that can be customized for your organization.
-              Each platform is built with enterprise-grade architecture and
-              designed for real-world impact.
+              Browse enterprise platforms that can be customized for your
+              organization. Each ERP is built with enterprise-grade architecture
+              and designed for real-world impact.
             </p>
           </motion.div>
         </div>
@@ -123,7 +121,7 @@ export default function ERPSolutionsPage() {
               Systems and we can design a custom ERP tailored to your organization.
             </p>
             <a
-              href="mailto:novielungu4@gmail.com?subject=Custom%20ERP%20Inquiry"
+              href={`mailto:${contactInfo.emailTo}?subject=Custom%20ERP%20Inquiry`}
               className="inline-flex items-center gap-2 mt-8 px-8 py-4 text-white font-semibold bg-gradient-to-r from-brand-teal to-brand-blue rounded-xl hover:shadow-xl hover:shadow-teal-500/30 transition-all"
             >
               <Mail size={18} />

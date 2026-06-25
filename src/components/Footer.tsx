@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Mail, MessageCircle, Linkedin } from "lucide-react";
+import { Mail, MessageCircle } from "lucide-react";
 import { contactInfo, whatsappUrl } from "@/data/contact";
 
 const defaultWhatsAppMessage =
@@ -35,7 +35,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/erp-solutions" className="text-slate-600 hover:text-brand-teal transition-colors">
-                  ERP Solutions
+                  Explore ERP Solutions
                 </Link>
               </li>
             </ul>
@@ -48,11 +48,11 @@ export default function Footer() {
             <ul className="space-y-3">
               <li>
                 <a
-                  href={`mailto:${contactInfo.email}`}
+                  href={`mailto:${contactInfo.emailTo}`}
                   className="inline-flex items-center gap-2 text-slate-600 hover:text-brand-teal transition-colors"
                 >
                   <Mail size={16} className="shrink-0" />
-                  {contactInfo.email}
+                  {contactInfo.emailDisplay}
                 </a>
               </li>
               {contactInfo.whatsappNumbers.map((phone) => (
@@ -71,17 +71,6 @@ export default function Footer() {
                   </a>
                 </li>
               ))}
-              <li>
-                <a
-                  href={contactInfo.linkedIn}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-slate-600 hover:text-brand-teal transition-colors"
-                >
-                  <Linkedin size={16} className="shrink-0" />
-                  LinkedIn
-                </a>
-              </li>
             </ul>
           </div>
         </div>
