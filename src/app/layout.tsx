@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ClientEnhancements from "@/components/ClientEnhancements";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -10,21 +11,23 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "HealingTech Systems | Customer Requirements Collection",
+  title: "HealingTech Systems | Innovation-Driven IT Solutions",
   description:
-    "Share your project requirements with HealingTech Systems. Select AI, website, mobile, or ERP services and complete the requirements form so we can design the right solution.",
+    "HealingTech Systems is an IT firm specializing in AI, smart systems, web apps, mobile applications, automation, and enterprise technology. Innovating for modern organizations.",
   keywords: [
     "HealingTech Systems",
-    "HealingTech",
-    "Requirements Form",
+    "IT firm",
+    "Innovation",
+    "Smart Systems",
     "AI Solutions",
     "ERP",
     "Software Development",
+    "Web Apps",
     "Mobile Apps",
   ],
   openGraph: {
-    title: "HealingTech Systems — Customer Requirements Portal",
-    description: "Select your service and tell us what you need. We design the right solution for your organization.",
+    title: "HealingTech Systems — Innovation-Driven IT Solutions",
+    description: "Building intelligent smart systems for modern organizations.",
     type: "website",
   },
 };
@@ -38,7 +41,9 @@ export default function RootLayout({
     <html lang="en" className={inter.variable}>
       <body className="min-h-screen flex flex-col">
         <Navbar />
-        <main className="flex-1">{children}</main>
+        <main className="flex-1">
+          <ClientEnhancements>{children}</ClientEnhancements>
+        </main>
         <Footer />
       </body>
     </html>

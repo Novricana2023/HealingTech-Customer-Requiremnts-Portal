@@ -49,9 +49,8 @@ export default function Services() {
             Our Services
           </h2>
           <p className="mt-4 text-lg text-slate-600">
-            After you share your requirements above, HealingTech designs and
-            delivers web apps, mobile apps, websites, AI systems, and enterprise
-            platforms for organizations like yours.
+            From AI and smart systems to web apps, mobile platforms, and
+            enterprise ERP — we deliver technology that drives innovation.
           </p>
         </motion.div>
 

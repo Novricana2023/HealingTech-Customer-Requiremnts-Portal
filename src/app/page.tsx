@@ -1,15 +1,21 @@
-import Hero from "@/components/Hero";
+import CorporateHero from "@/components/CorporateHero";
+import VisionMission from "@/components/VisionMission";
+import AboutSection from "@/components/AboutSection";
+import InnovationSection from "@/components/InnovationSection";
 import Services from "@/components/Services";
-import RequirementsCollection from "@/components/RequirementsCollection";
 import WhyHealingTech from "@/components/WhyHealingTech";
+import RequirementsCTA from "@/components/RequirementsCTA";
 
 export default function Home() {
   return (
     <>
-      <Hero />
-      <RequirementsCollection />
+      <CorporateHero />
+      <VisionMission />
+      <AboutSection />
+      <InnovationSection />
       <Services />
       <WhyHealingTech />
+      <RequirementsCTA />
     </>
   );
 }

@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { Mail, MessageCircle } from "lucide-react";
 import { contactInfo, whatsappUrl } from "@/data/contact";
+import { company } from "@/data/company";
 
 const defaultWhatsAppMessage =
-  "Hello HealingTech Systems, I would like to discuss a project requirement.";
+  "Hello HealingTech Systems, I would like to discuss a project.";
 
 export default function Footer() {
   return (
@@ -13,8 +14,8 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-bold text-slate-900">HealingTech Systems</h3>
             <p className="mt-3 text-slate-600 leading-relaxed">
-              Customer requirements collection — tell us what you need and we
-              design the right solution.
+              {company.tagline}. An IT firm delivering smart systems, AI
+              solutions, and enterprise technology for modern organizations.
             </p>
           </div>
 
@@ -24,13 +25,18 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2">
               <li>
-                <Link href="#services" className="text-slate-600 hover:text-brand-teal transition-colors">
+                <Link href="/#about" className="text-slate-600 hover:text-brand-teal transition-colors">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link href="/#services" className="text-slate-600 hover:text-brand-teal transition-colors">
                   Our Services
                 </Link>
               </li>
               <li>
-                <Link href="#requirements" className="text-slate-600 hover:text-brand-teal transition-colors">
-                  Requirements Forms
+                <Link href="/requirements" className="text-slate-600 hover:text-brand-teal transition-colors">
+                  Requirements Portal
                 </Link>
               </li>
               <li>
