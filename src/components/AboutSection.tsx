@@ -36,7 +36,7 @@ export default function AboutSection() {
                   HealingTech Initiative
                 </Link>
                 , we reinvest in digital skills, scholarships, and inclusion — because
-                technology should transform businesses and build Malawi&apos;s digital future.
+                technology should transform businesses and build Africa&apos;s digital future.
               </span>
             </p>
           </motion.div>

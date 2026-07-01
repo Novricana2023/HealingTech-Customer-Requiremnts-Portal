@@ -11,12 +11,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "HealingTech Labs | World-Class Technology for Malawi's Digital Future",
+  title: "HealingTech Labs | World-Class Technology for Africa's Digital Future",
   description:
-    "HealingTech Labs is a modern technology company and social enterprise headquartered in Malawi — building AI, enterprise software, web & mobile applications, and digital platforms that transform organizations.",
+    "HealingTech Labs is a modern African technology company and social enterprise — building AI, enterprise software, web & mobile applications, and digital platforms that transform organizations.",
   keywords: [
     "HealingTech Labs",
-    "Malawi technology",
+    "African technology",
     "AI solutions",
     "software engineering",
     "digital transformation",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "HealingTech Labs — Innovation-Driven Technology",
     description:
-      "Building technology that transforms businesses today while investing in Malawi's digital future tomorrow.",
+      "Building technology that transforms businesses today while investing in Africa's digital future tomorrow.",
     type: "website",
   },
 };

@@ -15,7 +15,7 @@ export default function Footer() {
             <h3 className="text-xl font-bold text-slate-900">HealingTech Labs</h3>
             <p className="mt-3 text-slate-600 leading-relaxed">
               {company.tagline}. World-class technology with a mission to transform
-              Malawi&apos;s digital economy.
+              Africa&apos;s digital economy.
             </p>
           </div>
 

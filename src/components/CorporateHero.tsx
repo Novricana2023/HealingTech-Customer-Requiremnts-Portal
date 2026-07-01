@@ -12,7 +12,7 @@ export default function CorporateHero() {
       <div className="relative w-full h-[52vh] min-h-[340px] max-h-[560px]">
         <Image
           src="/images/cover-tech-hero.jpg"
-          alt="HealingTech Labs — technology innovation in Malawi"
+          alt="HealingTech Labs — African technology innovation"
           fill
           className="object-cover object-center"
           priority
@@ -31,16 +31,16 @@ export default function CorporateHero() {
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white text-sm font-semibold backdrop-blur-sm">
                 <Sparkles size={16} />
-                World-Class Technology · Built in Malawi
+                World-Class Technology · Built for Africa
               </div>
 
               <h1 className="mt-5 text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight tracking-tight">
-                Accelerating Malawi&apos;s{" "}
+                Accelerating Africa&apos;s{" "}
                 <span className="text-teal-300">Digital Transformation</span>
               </h1>
 
               <p className="mt-4 text-base sm:text-lg text-white/90 leading-relaxed max-w-xl">
-                {company.about.slice(0, 160)}...
+                {company.heroIntro}
               </p>
 
               <div className="mt-7 flex flex-col sm:flex-row gap-3">

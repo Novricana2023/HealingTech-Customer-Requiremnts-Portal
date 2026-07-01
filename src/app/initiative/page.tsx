@@ -5,7 +5,7 @@ import { company } from "@/data/company";
 export const metadata = {
   title: "HealingTech Initiative | HealingTech Labs",
   description:
-    "HealingTech Initiative is the social impact arm of HealingTech Labs — digital skills, scholarships, innovation, and inclusion for Malawi's future.",
+    "HealingTech Initiative is the social impact arm of HealingTech Labs — digital skills, scholarships, innovation, and inclusion for Africa's future.",
 };
 
 const programs = [
@@ -31,7 +31,7 @@ const programs = [
     icon: Target,
     title: "Community Technology Access",
     description:
-      "Expanding access to technology resources and digital infrastructure so communities can participate in Malawi's digital economy.",
+      "Expanding access to technology resources and digital infrastructure so communities can participate in Africa's digital economy.",
   },
 ];
 
@@ -78,7 +78,7 @@ export default function InitiativePage() {
             <p>
               HealingTech Labs is a world-class technology company first. We build AI
               solutions, enterprise software, e-commerce platforms, and digital products
-              for clients across Malawi and beyond.
+              for clients across Africa and beyond.
             </p>
             <p>
               The commercial success of HealingTech Labs enables HealingTech Initiative
