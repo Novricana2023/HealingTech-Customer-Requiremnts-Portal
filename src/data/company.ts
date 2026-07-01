@@ -10,7 +10,7 @@ export const company = {
   mission:
     "HealingTech Labs designs and delivers intelligent software, AI solutions, enterprise systems, and digital platforms that help organizations scale — while reinvesting in digital skills, inclusion, and opportunity through HealingTech Initiative.",
   about:
-    "HealingTech Labs is a modern technology company and social enterprise focused on Africa's digital transformation. We combine world-class software engineering, artificial intelligence, and enterprise architecture with a long-term commitment to innovation that scales. From e-commerce and learning platforms to government systems and custom AI — we build technology that is professional, scalable, and built to last.",
+    "HealingTech Labs is a Malawi-based technology company and social enterprise focused on Africa's digital transformation — serving organizations across the continent and worldwide. We combine world-class software engineering, artificial intelligence, and enterprise architecture with a long-term commitment to innovation that scales.",
   initiativeSummary:
     "HealingTech Initiative is the social impact arm of HealingTech Labs — expanding access to digital skills, scholarships, innovation programs, and technology education for financially disadvantaged youth, persons with disabilities, and underserved communities across Africa.",
   founder:

@@ -7,6 +7,7 @@ import ClientEnhancements from "@/components/ClientEnhancements";
 import Analytics from "@/components/Analytics";
 import { OrganizationJsonLd, WebSiteJsonLd } from "@/components/JsonLd";
 import { siteConfig, absoluteUrl } from "@/lib/site-config";
+import { brand } from "@/lib/brand";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -77,11 +78,15 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/logo.jpeg", type: "image/jpeg" },
+      { url: brand.favicon.ico, sizes: "32x32" },
+      { url: brand.favicon[16], sizes: "16x16", type: "image/png" },
+      { url: brand.favicon[32], sizes: "32x32", type: "image/png" },
+      { url: brand.favicon[48], sizes: "48x48", type: "image/png" },
     ],
     apple: [
-      { url: "/logo.jpeg", sizes: "180x180", type: "image/jpeg" },
+      { url: brand.favicon[180], sizes: "180x180", type: "image/png" },
     ],
+    shortcut: [brand.favicon.ico],
   },
   manifest: "/manifest.webmanifest",
   ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION

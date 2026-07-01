@@ -1,6 +1,7 @@
 import { company } from "@/data/company";
 import { contactInfo } from "@/data/contact";
 import { absoluteUrl, siteConfig } from "@/lib/site-config";
+import { brand } from "@/lib/brand";
 
 export function OrganizationJsonLd() {
   const schema = {
@@ -8,13 +9,29 @@ export function OrganizationJsonLd() {
     "@type": "Organization",
     name: siteConfig.name,
     url: siteConfig.url,
-    logo: absoluteUrl("/logo.jpeg"),
+    logo: absoluteUrl(brand.logoSquare),
+    image: absoluteUrl(brand.logo),
     description: company.about,
     email: contactInfo.emailDisplay,
-    areaServed: {
-      "@type": "Continent",
-      name: "Africa",
+    address: {
+      "@type": "PostalAddress",
+      addressCountry: siteConfig.countryCode,
+      addressLocality: siteConfig.country,
     },
+    location: {
+      "@type": "Place",
+      name: siteConfig.country,
+      address: {
+        "@type": "PostalAddress",
+        addressCountry: siteConfig.countryCode,
+      },
+    },
+    areaServed: [
+      { "@type": "Country", name: "Malawi" },
+      { "@type": "Country", name: "Kenya" },
+      { "@type": "Continent", name: "Africa" },
+      { "@type": "Place", name: "Worldwide" },
+    ],
     knowsAbout: [
       "Artificial Intelligence",
       "Enterprise Software",
@@ -40,12 +57,15 @@ export function WebSiteJsonLd() {
     name: siteConfig.name,
     url: siteConfig.url,
     description: siteConfig.defaultDescription,
+    inLanguage: "en",
     publisher: {
       "@type": "Organization",
       name: siteConfig.name,
       logo: {
         "@type": "ImageObject",
-        url: absoluteUrl("/logo.jpeg"),
+        url: absoluteUrl(brand.logoSquare),
+        width: 512,
+        height: 512,
       },
     },
   };

@@ -6,6 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { brand } from "@/lib/brand";
 
 const navLinks = [
   { label: "About", href: "/#about" },
@@ -62,8 +63,8 @@ export default function Navbar() {
               className="shrink-0 w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 rounded-full overflow-hidden border-2 border-white shadow-md ring-2 ring-teal-100 bg-white group-hover:ring-teal-300 transition-all"
             >
               <Image
-                src="/logo.jpeg"
-                alt="HealingTech Labs"
+                src={brand.logo}
+                alt={brand.logoAlt}
                 width={112}
                 height={112}
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"

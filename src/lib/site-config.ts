@@ -4,27 +4,33 @@ export const siteConfig = {
   shortName: "HealingTech Labs",
   /** Canonical production URL (non-www). Vercel redirects www to apex. */
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://healingtechlabs.com",
+  /** Primary market for local SEO — company serves globally */
+  country: "Malawi",
+  countryCode: "MW",
   defaultTitle:
-    "HealingTech Labs | World-Class Technology for Africa's Digital Future",
+    "HealingTech Labs | Malawi Software Company — AI & Digital Solutions",
   defaultDescription:
-    "HealingTech Labs is a modern African technology company and social enterprise — building AI, enterprise software, web and mobile applications, and digital platforms that transform organizations across the continent.",
+    "HealingTech Labs is a Malawi-based technology company and social enterprise serving clients across Africa and worldwide — building AI, enterprise software, web and mobile applications, and digital platforms.",
   ogImage: "/images/cover-tech-hero.jpg",
   ogImageAlt:
-    "HealingTech Labs — African technology innovation and digital transformation",
+    "HealingTech Labs — Malawi technology company driving Africa's digital transformation",
   locale: "en_US",
   twitterHandle: "@HealingTechLabs",
   keywords: [
     "HealingTech Labs",
+    "software company Malawi",
+    "technology company Malawi",
+    "Malawi software development",
+    "AI solutions Malawi",
+    "web development Malawi",
+    "mobile app development Malawi",
+    "ERP Malawi",
+    "digital transformation Malawi",
     "African technology company",
     "AI solutions Africa",
     "software engineering",
-    "digital transformation Africa",
     "enterprise software",
-    "ERP systems",
-    "web application development",
-    "mobile app development",
     "HealingTech Initiative",
-    "social enterprise technology",
   ],
   /** SameAs links for Schema.org — add profiles when available */
   sameAs: [] as string[],
