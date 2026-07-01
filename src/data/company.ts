@@ -8,11 +8,9 @@ export const company = {
   vision:
     "To be a leading African force in world-class digital innovation — where technology built on the continent powers businesses, governments, and communities at global standards.",
   mission:
-    "HealingTech Labs designs and delivers intelligent software, AI solutions, enterprise systems, and digital platforms that help organizations scale — while reinvesting in digital skills, inclusion, and opportunity through HealingTech Initiative.",
+    "HealingTech Labs designs and delivers intelligent software, AI solutions, enterprise systems, and digital platforms that help organizations scale with excellence and long-term impact.",
   about:
     "HealingTech Labs is a Malawi-based technology company and social enterprise focused on Africa's digital transformation — serving organizations across the continent and worldwide. We combine world-class software engineering, artificial intelligence, and enterprise architecture with a long-term commitment to innovation that scales.",
-  initiativeSummary:
-    "HealingTech Initiative is an independent social impact program — expanding access to digital skills, scholarships, innovation programs, and technology education for financially disadvantaged youth, persons with disabilities, and underserved communities across Africa.",
   founder:
     "HealingTech Labs was founded by Ms. Novricana Lungu, a software engineer, AI developer, technology entrepreneur, and advocate for using technology to create meaningful social impact.",
   /** Used by AI assistant only when visitors ask about location */
@@ -38,9 +36,9 @@ export const company = {
       icon: "rocket",
     },
     {
-      title: "Impact Through Innovation",
+      title: "Built for Scale",
       description:
-        "Commercial excellence fuels HealingTech Initiative — digital literacy, scholarships, and inclusion for Africa's next generation.",
+        "Professional engineering, secure architecture, and solutions designed to grow with your organization.",
       icon: "heart",
     },
   ],

@@ -4,9 +4,6 @@ export const siteConfig = {
   shortName: "HealingTech Labs",
   /** Canonical production URL (non-www). Vercel redirects www to apex. */
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://healingtechlabs.com",
-  /** Separate HealingTech Initiative website */
-  initiativeUrl:
-    process.env.NEXT_PUBLIC_INITIATIVE_URL ?? "https://healingtechinitiative.org",
   country: "Malawi",
   countryCode: "MW",
   defaultTitle:
@@ -29,7 +26,6 @@ export const siteConfig = {
     "ERP Malawi",
     "digital transformation Malawi",
     "African technology company",
-    "HealingTech Initiative",
   ],
   sameAs: [] as string[],
 } as const;

@@ -33,12 +33,6 @@ LOCATION (ONLY when visitor explicitly asks where you are located, offices, Mala
 - Do not mention other specific countries unless confirmed later.
 - For general "do you work internationally" without asking location: say you serve organizations across Africa and beyond.
 
-HEALINGTECH INITIATIVE (social impact arm — NOT a separate competing org)
-- Expands access to digital skills, technology education, scholarships, innovation, and opportunities.
-- Focus: financially disadvantaged youth, persons with disabilities, underserved communities.
-- Commercial success of HealingTech Labs enables sustainable social impact through the Initiative.
-- Every technology solution contributes to a larger mission of creating opportunity.
-
 FOUNDER (only these facts — do not invent more)
 - ${company.founder}
 
@@ -79,12 +73,7 @@ const topics: Topic[] = [
   {
     keywords: ["hello", "hi", "hey", "moni", "malo"],
     reply:
-      "Hello! I am the HealingTech Labs AI Assistant. I can help with our technology services, HealingTech Initiative, ERP solutions, or how to start a project. What brings you here today?",
-  },
-  {
-    keywords: ["initiative", "social impact", "scholarship", "disability", "youth"],
-    reply:
-      "HealingTech Initiative is the social impact arm of HealingTech Labs. It focuses on expanding access to digital skills, technology education, scholarships, innovation, and opportunities for financially disadvantaged youth, persons with disabilities, and underserved communities. Our goal is to ensure technology benefits everyone.\n\nCommercial success at HealingTech Labs enables this sustainable impact.",
+      "Hello! I am the HealingTech Labs AI Assistant. I can help with our technology services, ERP solutions, or how to start a project. What brings you here today?",
   },
   {
     keywords: ["founder", "novricana", "who started", "who created", "lungu"],
@@ -172,7 +161,7 @@ export function getLocalReply(userMessage: string): string {
 
 export const quickActions = [
   { label: "Our services", message: "What services does HealingTech Labs offer?" },
-  { label: "HealingTech Initiative", message: "Tell me about HealingTech Initiative" },
   { label: "Start a project", message: "How do I start a project?" },
+  { label: "ERP solutions", message: "Tell me about your ERP solutions" },
   { label: "WhatsApp us", message: "I want to contact you on WhatsApp" },
 ];

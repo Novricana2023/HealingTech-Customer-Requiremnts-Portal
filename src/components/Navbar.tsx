@@ -7,13 +7,11 @@ import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { brand } from "@/lib/brand";
-import { initiative } from "@/data/initiative";
 
 const navLinks = [
-  { label: "About", href: "/#about", external: false },
-  { label: "Vision & Mission", href: "/#vision-mission", external: false },
-  { label: "Services", href: "/#services", external: false },
-  { label: "Initiative", href: initiative.websiteUrl, external: true },
+  { label: "About", href: "/#about" },
+  { label: "Vision & Mission", href: "/#vision-mission" },
+  { label: "Services", href: "/#services" },
 ];
 
 const menuVariants = {
@@ -27,35 +25,6 @@ const itemVariants = {
   visible: { opacity: 1, x: 0 },
   exit: { opacity: 0, x: -16 },
 };
-
-function NavLink({
-  link,
-  onClick,
-  className,
-}: {
-  link: (typeof navLinks)[number];
-  onClick?: () => void;
-  className: string;
-}) {
-  if (link.external) {
-    return (
-      <a
-        href={link.href}
-        target="_blank"
-        rel="noopener noreferrer"
-        onClick={onClick}
-        className={className}
-      >
-        {link.label}
-      </a>
-    );
-  }
-  return (
-    <Link href={link.href} onClick={onClick} className={className}>
-      {link.label}
-    </Link>
-  );
-}
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -110,13 +79,12 @@ export default function Navbar() {
 
           <div className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => (
-              <div key={link.label} className="relative px-4 py-2 group">
-                <NavLink
-                  link={link}
-                  className="text-sm font-medium text-slate-600 group-hover:text-brand-teal transition-colors duration-300"
-                />
+              <Link key={link.href} href={link.href} className="relative px-4 py-2 group">
+                <span className="text-sm font-medium text-slate-600 group-hover:text-brand-teal transition-colors duration-300">
+                  {link.label}
+                </span>
                 <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-gradient-to-r from-brand-teal to-brand-blue rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-              </div>
+              </Link>
             ))}
             <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}>
               <Link
@@ -159,12 +127,14 @@ export default function Navbar() {
               className="px-4 py-4 space-y-1"
             >
               {navLinks.map((link) => (
-                <motion.div key={link.label} variants={itemVariants}>
-                  <NavLink
-                    link={link}
+                <motion.div key={link.href} variants={itemVariants}>
+                  <Link
+                    href={link.href}
                     onClick={() => setOpen(false)}
                     className="block px-4 py-3 text-slate-700 font-medium rounded-xl hover:bg-teal-50 hover:text-brand-teal transition-colors"
-                  />
+                  >
+                    {link.label}
+                  </Link>
                 </motion.div>
               ))}
               <motion.div variants={itemVariants}>

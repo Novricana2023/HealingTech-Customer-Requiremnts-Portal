@@ -1,9 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Heart } from "lucide-react";
 import { company } from "@/data/company";
-import { initiative } from "@/data/initiative";
 
 export default function AboutSection() {
   return (
@@ -27,23 +25,6 @@ export default function AboutSection() {
               marketplaces, learning platforms, government systems, and custom products
               with the professionalism, scalability, and excellence clients expect from
               world-class technology partners.
-            </p>
-            <p className="mt-4 text-base text-slate-500 leading-relaxed flex items-start gap-2">
-              <Heart size={18} className="text-brand-teal shrink-0 mt-0.5" />
-              <span>
-                As technology partner to{" "}
-                <a
-                  href={initiative.websiteUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-brand-teal font-semibold hover:underline"
-                >
-                  {initiative.name}
-                </a>
-                , {company.name} supports independent social impact work — creating employment
-                for trained youth and contributing to programs that expand digital skills,
-                scholarships, and inclusion across Africa.
-              </span>
             </p>
           </motion.div>
 

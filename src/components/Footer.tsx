@@ -1,8 +1,7 @@
 import Link from "next/link";
-import { Mail, MessageCircle, Heart } from "lucide-react";
+import { Mail, MessageCircle } from "lucide-react";
 import { contactInfo, whatsappUrl } from "@/data/contact";
 import { company } from "@/data/company";
-import { initiative } from "@/data/initiative";
 
 const defaultWhatsAppMessage =
   "Hello HealingTech Labs, I would like to discuss a project.";
@@ -34,16 +33,6 @@ export default function Footer() {
                 <Link href="/#services" className="text-slate-600 hover:text-brand-teal transition-colors">
                   Our Services
                 </Link>
-              </li>
-              <li>
-                <a
-                  href={initiative.websiteUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-slate-600 hover:text-brand-teal transition-colors"
-                >
-                  HealingTech Initiative
-                </a>
               </li>
               <li>
                 <Link href="/requirements" className="text-slate-600 hover:text-brand-teal transition-colors">
@@ -92,26 +81,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 p-5 rounded-2xl bg-white border border-slate-100 flex flex-col sm:flex-row sm:items-start gap-3">
-          <Heart className="text-brand-teal shrink-0 mt-0.5" size={20} aria-hidden="true" />
-          <div>
-            <p className="text-sm font-semibold text-slate-900">{initiative.name}</p>
-            <p className="mt-1 text-sm text-slate-600 leading-relaxed">
-              {initiative.intro} {initiative.partner.summary}
-            </p>
-            <a
-              href={initiative.websiteUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block mt-2 text-sm font-medium text-brand-teal hover:underline"
-            >
-              Visit healingtechinitiative.org →
-            </a>
-          </div>
-        </div>
-
-        <div className="mt-8 pt-8 border-t border-slate-200 text-center text-sm text-slate-500">
-          <p>&copy; {new Date().getFullYear()} {company.name}. All rights reserved.</p>
+        <div className="mt-12 pt-8 border-t border-slate-200 text-center text-sm text-slate-500">
+          &copy; {new Date().getFullYear()} {company.name}. All rights reserved.
         </div>
       </div>
     </footer>

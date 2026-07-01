@@ -1,5 +1,4 @@
 import { company } from "@/data/company";
-import { initiative } from "@/data/initiative";
 import { contactInfo } from "@/data/contact";
 import { absoluteUrl, siteConfig } from "@/lib/site-config";
 import { brand } from "@/lib/brand";
@@ -32,11 +31,6 @@ export function OrganizationJsonLd() {
       "Mobile Applications",
       "Digital Transformation",
     ],
-    subOrganization: {
-      "@type": "Organization",
-      name: initiative.name,
-      url: initiative.websiteUrl,
-    },
     ...(siteConfig.sameAs.length > 0 ? { sameAs: siteConfig.sameAs } : {}),
   };
 
