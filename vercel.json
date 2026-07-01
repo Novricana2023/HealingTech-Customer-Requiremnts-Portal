@@ -6,12 +6,6 @@
   "redirects": [
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "www.healingtechinitiative.org" }],
-      "destination": "https://healingtechinitiative.org/:path*",
-      "permanent": true
-    },
-    {
-      "source": "/:path*",
       "has": [{ "type": "host", "value": "www.healingtechlabs.com" }],
       "destination": "https://healingtechlabs.com/:path*",
       "permanent": true

@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { Heart } from "lucide-react";
 import { company } from "@/data/company";
@@ -33,9 +32,14 @@ export default function AboutSection() {
               <Heart size={18} className="text-brand-teal shrink-0 mt-0.5" />
               <span>
                 As technology partner to{" "}
-                <Link href="/initiative" className="text-brand-teal font-semibold hover:underline">
+                <a
+                  href={initiative.websiteUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-brand-teal font-semibold hover:underline"
+                >
                   {initiative.name}
-                </Link>
+                </a>
                 , {company.name} supports independent social impact work — creating employment
                 for trained youth and contributing to programs that expand digital skills,
                 scholarships, and inclusion across Africa.

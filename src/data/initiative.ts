@@ -1,6 +1,9 @@
 /** HealingTech Initiative — content & partnership language */
 export const initiative = {
   name: "HealingTech Initiative",
+  /** Live Initiative website (separate from HealingTech Labs) */
+  websiteUrl:
+    process.env.NEXT_PUBLIC_INITIATIVE_URL ?? "https://healingtechinitiative.org",
   tagline: "Digital skills, inclusion, and opportunity for Africa's youth",
   intro:
     "HealingTech Initiative is an independent social impact program dedicated to digital skills, scholarships, mental wellness, and technology access for underserved youth and communities across Africa.",
@@ -10,7 +13,7 @@ export const initiative = {
     name: "HealingTech Labs",
     role: "Technology Partner",
     summary:
-      "HealingTech Labs collaborates with HealingTech Initiative by providing technology expertise, strategic support, and digital infrastructure — including this website.",
+      "HealingTech Labs collaborates with HealingTech Initiative by providing technology expertise, strategic support, and digital infrastructure for the Initiative's programs and website.",
     employment:
       "Through HealingTech Labs, graduates and participants from our training programs can access real employment pathways — turning skills into jobs while strengthening the technology ecosystem we are building together.",
     support:
@@ -22,5 +25,5 @@ export const initiative = {
     "Community and institutional partnerships",
     "Contributions from HealingTech Labs",
   ],
-  websiteCredit: "Website developed by HealingTech Labs.",
+  websiteCredit: "The HealingTech Initiative website is developed by HealingTech Labs.",
 } as const;

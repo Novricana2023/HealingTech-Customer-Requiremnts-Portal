@@ -46,10 +46,12 @@ export default function InitiativeTeaser() {
               communities.
             </p>
             <Link
-              href="/initiative"
+              href={initiative.websiteUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 mt-6 px-6 py-3 font-semibold text-white bg-gradient-to-r from-brand-teal to-brand-blue rounded-xl hover:shadow-lg transition-shadow"
             >
-              Learn About the Initiative
+              Visit HealingTech Initiative
               <ArrowRight size={18} />
             </Link>
           </motion.div>
