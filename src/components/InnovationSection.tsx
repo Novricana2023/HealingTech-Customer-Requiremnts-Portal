@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Cpu, Sparkles, Rocket, Building2, LucideIcon } from "lucide-react";
+import { Cpu, Sparkles, Rocket, Building2, Heart, LucideIcon } from "lucide-react";
 import { company } from "@/data/company";
 
 const iconMap: Record<string, LucideIcon> = {
@@ -9,6 +9,7 @@ const iconMap: Record<string, LucideIcon> = {
   sparkles: Sparkles,
   rocket: Rocket,
   building: Building2,
+  heart: Heart,
 };
 
 export default function InnovationSection() {

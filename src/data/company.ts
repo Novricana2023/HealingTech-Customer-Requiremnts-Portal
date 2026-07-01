@@ -1,41 +1,50 @@
 export const company = {
-  tagline: "Innovating Smart Systems for a Digital Future",
+  name: "HealingTech Labs",
+  tagline: "Building Technology That Transforms Malawi's Digital Future",
+  closingMessage:
+    "We build technology that transforms businesses today while investing in the people who will build Malawi's digital future tomorrow.",
   vision:
-    "To be Africa's leading force in intelligent technology — empowering organizations with innovative digital systems that transform how they work, serve, and grow.",
+    "To make Malawi a hub of world-class digital innovation — where African-built technology powers businesses, governments, and communities at global standards.",
   mission:
-    "We design and deliver smart, scalable technology solutions — from AI and automation to web apps, mobile platforms, and enterprise systems — that help organizations innovate with confidence.",
+    "HealingTech Labs designs and delivers intelligent software, AI solutions, enterprise systems, and digital platforms that help organizations scale — while reinvesting in digital skills, inclusion, and opportunity through HealingTech Initiative.",
   about:
-    "HealingTech Systems is an IT firm built on innovation. We combine deep technical expertise with a passion for smart systems that solve real-world problems. Whether you are a government agency, healthcare institution, business, or startup, we partner with you to build technology that is intelligent, secure, and built for the future.",
+    "HealingTech Labs is a modern technology company and social enterprise headquartered in Malawi. We combine world-class software engineering, artificial intelligence, and enterprise architecture with a long-term commitment to national digital transformation. From e-commerce and learning platforms to government systems and custom AI — we build technology that is professional, scalable, and built to last.",
+  initiativeSummary:
+    "HealingTech Initiative is the social impact arm of HealingTech Labs — expanding access to digital skills, scholarships, innovation programs, and technology education for financially disadvantaged youth, persons with disabilities, and underserved communities.",
+  founder:
+    "HealingTech Labs was founded by Ms. Novricana Lungu, a software engineer, AI developer, technology entrepreneur, and advocate for using technology to create meaningful social impact.",
+  location:
+    "HealingTech Labs is headquartered in Malawi and serves clients locally and internationally across Africa and beyond.",
   innovationPillars: [
     {
-      title: "Smart Systems",
+      title: "AI & Intelligent Systems",
       description:
-        "Intelligent platforms that automate workflows, connect data, and deliver insights organizations can act on.",
-      icon: "cpu",
-    },
-    {
-      title: "AI & Automation",
-      description:
-        "From AI assistants to document intelligence — we embed automation where it creates the most impact.",
+        "Custom AI, automation, chatbots, and data-driven platforms engineered for real business outcomes.",
       icon: "sparkles",
     },
     {
-      title: "Digital Innovation",
+      title: "Enterprise Software",
       description:
-        "Web apps, mobile apps, cloud architecture, and modern UX designed for organizations ready to lead.",
+        "ERP systems, government portals, learning platforms, and mission-critical digital infrastructure.",
+      icon: "building",
+    },
+    {
+      title: "Digital Products",
+      description:
+        "Web apps, mobile applications, e-commerce, marketplaces, and cloud-native platforms built to scale.",
       icon: "rocket",
     },
     {
-      title: "Enterprise Technology",
+      title: "Impact Through Innovation",
       description:
-        "ERP systems, government portals, and mission-critical platforms built to scale and perform.",
-      icon: "building",
+        "Commercial excellence fuels HealingTech Initiative — digital literacy, scholarships, and inclusion for Malawi's next generation.",
+      icon: "heart",
     },
   ],
   stats: [
     { value: "10+", label: "ERP Platforms" },
-    { value: "AI-First", label: "Approach" },
-    { value: "360°", label: "Tech Solutions" },
-    { value: "24/7", label: "Dedicated Support" },
+    { value: "AI-First", label: "Engineering" },
+    { value: "360°", label: "Digital Solutions" },
+    { value: "Malawi", label: "Headquartered" },
   ],
 };

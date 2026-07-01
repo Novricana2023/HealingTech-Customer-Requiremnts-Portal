@@ -43,11 +43,11 @@ export default function WhyHealingTech() {
             Why Choose Us
           </span>
           <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900">
-            Why HealingTech
+            Why HealingTech Labs
           </h2>
           <p className="mt-4 text-lg text-slate-600">
-            We combine enterprise-grade engineering with human-centric design
-            to deliver solutions that transform organizations.
+            Trusted engineering, innovation, and long-term partnership — built for
+            organizations that demand excellence.
           </p>
         </motion.div>
 

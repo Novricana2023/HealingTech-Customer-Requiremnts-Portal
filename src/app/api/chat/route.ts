@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest } from "next/server";
 import { getSystemPrompt } from "@/lib/chat-knowledge";
 
 export async function POST(request: NextRequest) {
@@ -6,23 +6,26 @@ export async function POST(request: NextRequest) {
     const { messages } = await request.json();
 
     if (!Array.isArray(messages) || messages.length === 0) {
-      return NextResponse.json({ error: "Invalid messages" }, { status: 400 });
+      return new Response(JSON.stringify({ error: "Invalid messages" }), {
+        status: 400,
+      });
     }
 
     const apiKey = process.env.OPENAI_API_KEY;
-
     if (!apiKey) {
-      return NextResponse.json({ useLocal: true });
+      return new Response(JSON.stringify({ useLocal: true }), {
+        headers: { "Content-Type": "application/json" },
+      });
     }
 
-    const chatMessages = messages.slice(-12).map(
+    const chatMessages = messages.slice(-16).map(
       (m: { from: string; text: string }) => ({
         role: m.from === "user" ? ("user" as const) : ("assistant" as const),
-        content: m.text,
+        content: String(m.text).slice(0, 2000),
       })
     );
 
-    const response = await fetch("https://api.openai.com/v1/chat/completions", {
+    const openAIResponse = await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -31,26 +34,76 @@ export async function POST(request: NextRequest) {
       body: JSON.stringify({
         model: "gpt-4o-mini",
         messages: [{ role: "system", content: getSystemPrompt() }, ...chatMessages],
-        max_tokens: 350,
-        temperature: 0.65,
+        max_tokens: 450,
+        temperature: 0.7,
+        stream: true,
       }),
     });
 
-    if (!response.ok) {
-      console.error("OpenAI error:", await response.text());
-      return NextResponse.json({ useLocal: true });
+    if (!openAIResponse.ok) {
+      console.error("OpenAI error:", await openAIResponse.text());
+      return new Response(JSON.stringify({ useLocal: true }), {
+        headers: { "Content-Type": "application/json" },
+      });
     }
 
-    const data = await response.json();
-    const reply = data.choices?.[0]?.message?.content?.trim();
+    const encoder = new TextEncoder();
+    const decoder = new TextDecoder();
 
-    if (!reply) {
-      return NextResponse.json({ useLocal: true });
-    }
+    const stream = new ReadableStream({
+      async start(controller) {
+        const reader = openAIResponse.body?.getReader();
+        if (!reader) {
+          controller.close();
+          return;
+        }
 
-    return NextResponse.json({ reply });
+        let buffer = "";
+        try {
+          while (true) {
+            const { done, value } = await reader.read();
+            if (done) break;
+
+            buffer += decoder.decode(value, { stream: true });
+            const lines = buffer.split("\n");
+            buffer = lines.pop() || "";
+
+            for (const line of lines) {
+              const trimmed = line.trim();
+              if (!trimmed.startsWith("data: ")) continue;
+              const data = trimmed.slice(6);
+              if (data === "[DONE]") continue;
+
+              try {
+                const parsed = JSON.parse(data);
+                const content = parsed.choices?.[0]?.delta?.content;
+                if (content) {
+                  controller.enqueue(encoder.encode(content));
+                }
+              } catch {
+                // skip malformed chunks
+              }
+            }
+          }
+        } catch (err) {
+          console.error("Stream error:", err);
+        } finally {
+          controller.close();
+        }
+      },
+    });
+
+    return new Response(stream, {
+      headers: {
+        "Content-Type": "text/plain; charset=utf-8",
+        "Cache-Control": "no-cache",
+        Connection: "keep-alive",
+      },
+    });
   } catch (error) {
     console.error("Chat API error:", error);
-    return NextResponse.json({ useLocal: true });
+    return new Response(JSON.stringify({ useLocal: true }), {
+      headers: { "Content-Type": "application/json" },
+    });
   }
 }

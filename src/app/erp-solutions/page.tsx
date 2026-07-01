@@ -118,7 +118,7 @@ export default function ERPSolutionsPage() {
             </h2>
             <p className="mt-4 text-slate-600 leading-relaxed">
               If you do not see the exact solution you need, contact HealingTech
-              Systems and we can design a custom ERP tailored to your organization.
+              Labs and we can design a custom ERP tailored to your organization.
             </p>
             <a
               href={`mailto:${contactInfo.emailTo}?subject=Custom%20ERP%20Inquiry`}

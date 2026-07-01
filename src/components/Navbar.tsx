@@ -11,7 +11,7 @@ const navLinks = [
   { label: "About", href: "/#about" },
   { label: "Vision & Mission", href: "/#vision-mission" },
   { label: "Services", href: "/#services" },
-  { label: "Innovation", href: "/#innovation" },
+  { label: "Initiative", href: "/initiative" },
 ];
 
 const menuVariants = {
@@ -63,7 +63,7 @@ export default function Navbar() {
             >
               <Image
                 src="/logo.jpeg"
-                alt="HealingTech Systems"
+                alt="HealingTech Labs"
                 width={112}
                 height={112}
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
@@ -71,7 +71,7 @@ export default function Navbar() {
               />
             </motion.div>
             <span className="hidden sm:block font-semibold text-slate-800 tracking-tight text-base lg:text-lg group-hover:text-brand-teal transition-colors">
-              HealingTech <span className="text-brand-teal">Systems</span>
+              HealingTech <span className="text-brand-teal">Labs</span>
             </span>
           </Link>
 

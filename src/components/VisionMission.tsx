@@ -15,7 +15,7 @@ export default function VisionMission() {
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <span className="text-sm font-semibold text-brand-teal uppercase tracking-wider">
-            Who We Are
+            Our Direction
           </span>
           <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900">
             Vision &amp; Mission
@@ -28,34 +28,37 @@ export default function VisionMission() {
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
             className="p-8 lg:p-10 rounded-2xl bg-gradient-to-br from-teal-50 to-white border border-teal-100"
           >
             <div className="inline-flex p-3 rounded-xl bg-brand-teal text-white mb-6">
               <Eye size={24} />
             </div>
             <h3 className="text-2xl font-bold text-slate-900">Our Vision</h3>
-            <p className="mt-4 text-slate-600 leading-relaxed text-lg">
-              {company.vision}
-            </p>
+            <p className="mt-4 text-slate-600 leading-relaxed text-lg">{company.vision}</p>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, x: 24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
             className="p-8 lg:p-10 rounded-2xl bg-gradient-to-br from-blue-50 to-white border border-blue-100"
           >
             <div className="inline-flex p-3 rounded-xl bg-brand-blue text-white mb-6">
               <Target size={24} />
             </div>
             <h3 className="text-2xl font-bold text-slate-900">Our Mission</h3>
-            <p className="mt-4 text-slate-600 leading-relaxed text-lg">
-              {company.mission}
-            </p>
+            <p className="mt-4 text-slate-600 leading-relaxed text-lg">{company.mission}</p>
           </motion.div>
         </div>
+
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-12 text-center text-lg text-slate-700 max-w-3xl mx-auto font-medium italic"
+        >
+          &ldquo;{company.closingMessage}&rdquo;
+        </motion.p>
       </div>
     </section>
   );

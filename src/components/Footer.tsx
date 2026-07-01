@@ -4,7 +4,7 @@ import { contactInfo, whatsappUrl } from "@/data/contact";
 import { company } from "@/data/company";
 
 const defaultWhatsAppMessage =
-  "Hello HealingTech Systems, I would like to discuss a project.";
+  "Hello HealingTech Labs, I would like to discuss a project.";
 
 export default function Footer() {
   return (
@@ -12,10 +12,10 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div>
-            <h3 className="text-xl font-bold text-slate-900">HealingTech Systems</h3>
+            <h3 className="text-xl font-bold text-slate-900">HealingTech Labs</h3>
             <p className="mt-3 text-slate-600 leading-relaxed">
-              {company.tagline}. An IT firm delivering smart systems, AI
-              solutions, and enterprise technology for modern organizations.
+              {company.tagline}. World-class technology with a mission to transform
+              Malawi&apos;s digital economy.
             </p>
           </div>
 
@@ -32,6 +32,11 @@ export default function Footer() {
               <li>
                 <Link href="/#services" className="text-slate-600 hover:text-brand-teal transition-colors">
                   Our Services
+                </Link>
+              </li>
+              <li>
+                <Link href="/initiative" className="text-slate-600 hover:text-brand-teal transition-colors">
+                  HealingTech Initiative
                 </Link>
               </li>
               <li>
@@ -82,7 +87,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-slate-200 text-center text-sm text-slate-500">
-          &copy; {new Date().getFullYear()} HealingTech Systems. All rights reserved.
+          &copy; {new Date().getFullYear()} HealingTech Labs. All rights reserved.
         </div>
       </div>
     </footer>

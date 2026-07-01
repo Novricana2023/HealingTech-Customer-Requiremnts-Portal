@@ -4,15 +4,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
+import { company } from "@/data/company";
 
 export default function CorporateHero() {
   return (
     <section className="relative pt-20 lg:pt-24">
-      {/* Full-width tech cover */}
       <div className="relative w-full h-[52vh] min-h-[340px] max-h-[560px]">
         <Image
           src="/images/cover-tech-hero.jpg"
-          alt="African tech professionals collaborating in the office — HealingTech Systems"
+          alt="HealingTech Labs — technology innovation in Malawi"
           fill
           className="object-cover object-center"
           priority
@@ -31,18 +31,16 @@ export default function CorporateHero() {
             >
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white text-sm font-semibold backdrop-blur-sm">
                 <Sparkles size={16} />
-                Innovation-Driven IT Solutions
+                World-Class Technology · Built in Malawi
               </div>
 
               <h1 className="mt-5 text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight tracking-tight">
-                Building Intelligent{" "}
-                <span className="text-teal-300">Smart Systems</span> For Modern
-                Organizations
+                Accelerating Malawi&apos;s{" "}
+                <span className="text-teal-300">Digital Transformation</span>
               </h1>
 
               <p className="mt-4 text-base sm:text-lg text-white/90 leading-relaxed max-w-xl">
-                HealingTech Systems is an IT firm specializing in AI, web apps,
-                mobile applications, automation, and enterprise platforms.
+                {company.about.slice(0, 160)}...
               </p>
 
               <div className="mt-7 flex flex-col sm:flex-row gap-3">
@@ -55,7 +53,7 @@ export default function CorporateHero() {
                 </Link>
                 <Link
                   href="#services"
-                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 font-semibold text-white bg-white/10 border border-white/30 rounded-xl hover:bg-white/20 backdrop-blur-sm transition-all"
+                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 font-semibold text-white bg-black rounded-xl hover:bg-slate-900 shadow-lg transition-all"
                 >
                   Explore Our Services
                 </Link>

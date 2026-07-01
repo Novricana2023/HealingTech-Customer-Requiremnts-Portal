@@ -1,6 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
+import { ArrowRight, Heart } from "lucide-react";
 import { company } from "@/data/company";
 
 export default function AboutSection() {
@@ -14,18 +16,28 @@ export default function AboutSection() {
             viewport={{ once: true }}
           >
             <span className="text-sm font-semibold text-brand-teal uppercase tracking-wider">
-              About HealingTech Systems
+              About HealingTech Labs
             </span>
             <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-slate-900">
-              An IT Firm Built on Innovation
+              A Leading African Technology Company
             </h2>
-            <p className="mt-6 text-lg text-slate-600 leading-relaxed">
-              {company.about}
-            </p>
+            <p className="mt-6 text-lg text-slate-600 leading-relaxed">{company.about}</p>
             <p className="mt-4 text-lg text-slate-600 leading-relaxed">
-              We don&apos;t just build software — we engineer smart systems that
-              drive efficiency, unlock data, and create lasting digital advantage
-              for the organizations we serve.
+              We engineer AI solutions, enterprise systems, e-commerce platforms, digital
+              marketplaces, learning platforms, government systems, and custom products
+              with the professionalism, scalability, and excellence clients expect from
+              world-class technology partners.
+            </p>
+            <p className="mt-4 text-base text-slate-500 leading-relaxed flex items-start gap-2">
+              <Heart size={18} className="text-brand-teal shrink-0 mt-0.5" />
+              <span>
+                Through{" "}
+                <Link href="/initiative" className="text-brand-teal font-semibold hover:underline">
+                  HealingTech Initiative
+                </Link>
+                , we reinvest in digital skills, scholarships, and inclusion — because
+                technology should transform businesses and build Malawi&apos;s digital future.
+              </span>
             </p>
           </motion.div>
 

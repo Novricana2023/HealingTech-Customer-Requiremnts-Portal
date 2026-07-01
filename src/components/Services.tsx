@@ -49,8 +49,9 @@ export default function Services() {
             Our Services
           </h2>
           <p className="mt-4 text-lg text-slate-600">
-            From AI and smart systems to web apps, mobile platforms, and
-            enterprise ERP — we deliver technology that drives innovation.
+            From AI and intelligent systems to enterprise platforms and digital
+            products — HealingTech Labs delivers technology built for scale,
+            trust, and long-term impact.
           </p>
         </motion.div>
 
