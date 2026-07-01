@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Heart, GraduationCap, Users, Lightbulb } from "lucide-react";
-import { company } from "@/data/company";
+import { initiative } from "@/data/initiative";
 
 const highlights = [
   {
@@ -34,18 +34,16 @@ export default function InitiativeTeaser() {
             viewport={{ once: true }}
           >
             <span className="inline-flex items-center gap-2 text-sm font-semibold text-brand-teal uppercase tracking-wider">
-              <Heart size={16} /> Social Impact Arm
+              <Heart size={16} /> Independent Social Impact
             </span>
             <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-slate-900">
-              HealingTech Initiative
+              {initiative.name}
             </h2>
-            <p className="mt-4 text-lg text-slate-600 leading-relaxed">
-              {company.initiativeSummary}
-            </p>
+            <p className="mt-4 text-lg text-slate-600 leading-relaxed">{initiative.intro}</p>
             <p className="mt-4 text-slate-600 leading-relaxed">
-              Every solution we build at HealingTech Labs contributes to a larger mission.
-              Commercial excellence enables sustainable impact — digital skills, scholarships,
-              and technology access for communities that need it most.
+              {initiative.partner.name} serves as our technology partner — providing expertise,
+              employment pathways for trained youth, and support that helps our programs reach more
+              communities.
             </p>
             <Link
               href="/initiative"

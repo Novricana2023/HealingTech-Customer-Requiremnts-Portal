@@ -53,26 +53,29 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
         <div
           className={`flex items-center justify-between transition-all duration-500 ${
-            scrolled ? "h-16 lg:h-20" : "h-20 lg:h-28"
+            scrolled ? "h-16 lg:h-[4.5rem]" : "h-[4.5rem] lg:h-20"
           }`}
         >
-          <Link href="/" className="flex items-center gap-3 group shrink-0">
+          <Link href="/" className="flex items-center gap-3 group shrink-0 min-w-0">
             <motion.div
-              animate={{ scale: scrolled ? 0.85 : 1 }}
+              animate={{ scale: scrolled ? 0.95 : 1 }}
               transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-              className="shrink-0 w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 rounded-full overflow-hidden border-2 border-white shadow-md ring-2 ring-teal-100 bg-white group-hover:ring-teal-300 transition-all"
+              className="shrink-0 flex items-center justify-center rounded-xl bg-white border border-slate-200/90 shadow-sm px-3 py-2 sm:px-4 sm:py-2.5 group-hover:border-teal-300 group-hover:shadow-md transition-all"
             >
               <Image
                 src={brand.logo}
                 alt={brand.logoAlt}
-                width={112}
-                height={112}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                width={180}
+                height={56}
+                className={`w-auto object-contain transition-all duration-300 ${
+                  scrolled ? "h-8 sm:h-9" : "h-9 sm:h-10 lg:h-11"
+                }`}
                 priority
               />
             </motion.div>
-            <span className="hidden sm:block font-semibold text-slate-800 tracking-tight text-base lg:text-lg group-hover:text-brand-teal transition-colors">
-              HealingTech <span className="text-brand-teal">Labs</span>
+            <span className="hidden md:block font-semibold text-slate-800 tracking-tight text-base lg:text-lg group-hover:text-brand-teal transition-colors leading-tight">
+              HealingTech{" "}
+              <span className="text-brand-teal">Initiative</span>
             </span>
           </Link>
 

@@ -1,38 +1,36 @@
 /** Production site configuration — single source of truth for domain and SEO */
 export const siteConfig = {
-  name: "HealingTech Labs",
-  shortName: "HealingTech Labs",
+  name: "HealingTech Initiative",
+  shortName: "HealingTech Initiative",
   /** Canonical production URL (non-www). Vercel redirects www to apex. */
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://healingtechlabs.com",
-  /** Primary market for local SEO — company serves globally */
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://healingtechinitiative.org",
+  technologyPartner: {
+    name: "HealingTech Labs",
+    url: process.env.NEXT_PUBLIC_LABS_URL ?? "https://healingtechlabs.com",
+  },
+  /** Primary market for local SEO — serves globally */
   country: "Malawi",
   countryCode: "MW",
   defaultTitle:
-    "HealingTech Labs | Malawi Software Company — AI & Digital Solutions",
+    "HealingTech Initiative | Digital Skills & Youth Opportunity in Africa",
   defaultDescription:
-    "HealingTech Labs is a Malawi-based technology company and social enterprise serving clients across Africa and worldwide — building AI, enterprise software, web and mobile applications, and digital platforms.",
+    "HealingTech Initiative is an independent social impact program in Malawi — digital skills, scholarships, mental wellness, and community programs for youth across Africa. Technology partner: HealingTech Labs.",
   ogImage: "/images/cover-tech-hero.jpg",
   ogImageAlt:
-    "HealingTech Labs — Malawi technology company driving Africa's digital transformation",
+    "HealingTech Initiative — digital inclusion and youth opportunity in Africa",
   locale: "en_US",
   twitterHandle: "@HealingTechLabs",
   keywords: [
-    "HealingTech Labs",
-    "software company Malawi",
-    "technology company Malawi",
-    "Malawi software development",
-    "AI solutions Malawi",
-    "web development Malawi",
-    "mobile app development Malawi",
-    "ERP Malawi",
-    "digital transformation Malawi",
-    "African technology company",
-    "AI solutions Africa",
-    "software engineering",
-    "enterprise software",
     "HealingTech Initiative",
+    "youth digital skills Malawi",
+    "technology training Africa",
+    "coding bootcamp Malawi",
+    "mental health youth programs",
+    "digital inclusion Africa",
+    "HealingTech Labs",
+    "social impact technology",
+    "scholarships technology Africa",
   ],
-  /** SameAs links for Schema.org — add profiles when available */
   sameAs: [] as string[],
 } as const;
 

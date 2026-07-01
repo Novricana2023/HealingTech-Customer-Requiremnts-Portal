@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Heart } from "lucide-react";
 import { company } from "@/data/company";
+import { initiative } from "@/data/initiative";
 
 export default function AboutSection() {
   return (
@@ -31,12 +32,13 @@ export default function AboutSection() {
             <p className="mt-4 text-base text-slate-500 leading-relaxed flex items-start gap-2">
               <Heart size={18} className="text-brand-teal shrink-0 mt-0.5" />
               <span>
-                Through{" "}
+                As technology partner to{" "}
                 <Link href="/initiative" className="text-brand-teal font-semibold hover:underline">
-                  HealingTech Initiative
+                  {initiative.name}
                 </Link>
-                , we reinvest in digital skills, scholarships, and inclusion — because
-                technology should transform businesses and build Africa&apos;s digital future.
+                , {company.name} supports independent social impact work — creating employment
+                for trained youth and contributing to programs that expand digital skills,
+                scholarships, and inclusion across Africa.
               </span>
             </p>
           </motion.div>

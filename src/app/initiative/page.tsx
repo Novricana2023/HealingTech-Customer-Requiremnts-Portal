@@ -1,19 +1,36 @@
 import Link from "next/link";
-import { Heart, GraduationCap, Users, Lightbulb, Target, ArrowLeft } from "lucide-react";
+import Image from "next/image";
+import {
+  Heart,
+  GraduationCap,
+  Users,
+  Lightbulb,
+  Target,
+  ArrowLeft,
+  Handshake,
+  Briefcase,
+  PiggyBank,
+  ExternalLink,
+} from "lucide-react";
 import { company } from "@/data/company";
+import { initiative } from "@/data/initiative";
 import { createPageMetadata } from "@/lib/seo";
+import { siteConfig } from "@/lib/site-config";
+import { brand } from "@/lib/brand";
+import UpcomingPrograms from "@/components/UpcomingPrograms";
 
 export const metadata = createPageMetadata({
   title: "HealingTech Initiative",
   description:
-    "HealingTech Initiative is the social impact arm of HealingTech Labs — digital skills, scholarships, innovation programs, and inclusion for Africa's future.",
+    "HealingTech Initiative is an independent social impact program — digital skills, coding bootcamps, mental health programs, and youth opportunity across Africa. Technology partner: HealingTech Labs.",
   path: "/initiative",
   keywords: [
     "HealingTech Initiative",
     "digital skills Africa",
+    "coding bootcamp Malawi",
+    "youth mental health programs",
     "technology scholarships",
     "social impact technology",
-    "digital inclusion",
   ],
 });
 
@@ -45,6 +62,8 @@ const programs = [
 ];
 
 export default function InitiativePage() {
+  const { technologyPartner } = siteConfig;
+
   return (
     <>
       <section className="hero-gradient pt-28 pb-16 lg:pt-32 lg:pb-20">
@@ -59,49 +78,88 @@ export default function InitiativePage() {
 
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal-50 border border-teal-100 text-teal-800 text-sm font-semibold">
             <Heart size={16} aria-hidden="true" />
-            Social Impact Arm of HealingTech Labs
+            Independent Social Impact Program
           </span>
 
           <h1 className="mt-6 text-4xl sm:text-5xl font-bold text-slate-900">
-            HealingTech Initiative
+            {initiative.name}
           </h1>
 
-          <p className="mt-6 text-lg text-slate-600 leading-relaxed">
-            HealingTech Initiative is the social impact arm of{" "}
-            <strong>HealingTech Labs</strong> — not a separate organization, but the
-            mission-driven extension of our work as a technology company.
-          </p>
+          <p className="mt-6 text-lg text-slate-600 leading-relaxed">{initiative.intro}</p>
 
           <p className="mt-4 text-lg text-slate-600 leading-relaxed">
             {company.initiativeSummary}
           </p>
+
+          <p className="mt-4 text-base text-slate-500 leading-relaxed">{initiative.independenceNote}</p>
         </div>
       </section>
 
-      <section className="py-16 lg:py-20 bg-white" aria-labelledby="initiative-connection-heading">
+      <section className="py-16 lg:py-20 bg-white" aria-labelledby="technology-partner-heading">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 id="initiative-connection-heading" className="text-2xl sm:text-3xl font-bold text-slate-900">
-            How It Connects to HealingTech Labs
-          </h2>
-          <div className="mt-6 space-y-4 text-slate-600 leading-relaxed text-lg">
-            <p>
-              HealingTech Labs is a world-class technology company first. We build AI
-              solutions, enterprise software, e-commerce platforms, and digital products
-              for clients across Africa and beyond.
-            </p>
-            <p>
-              The commercial success of HealingTech Labs enables HealingTech Initiative
-              to create sustainable social impact — reinvesting in digital skills training,
-              technology education, innovation, and inclusion.
-            </p>
-            <p className="font-medium text-slate-800 italic">
-              &ldquo;{company.closingMessage}&rdquo;
-            </p>
+          <div className="flex flex-col sm:flex-row sm:items-start gap-6 p-6 lg:p-8 rounded-2xl bg-slate-50 border border-slate-100">
+            <div className="shrink-0 flex items-center justify-center rounded-xl bg-white border border-slate-200 shadow-sm px-5 py-4">
+              <Image
+                src={brand.logo}
+                alt={brand.logoAlt}
+                width={200}
+                height={64}
+                className="h-12 sm:h-14 w-auto object-contain"
+              />
+            </div>
+            <div>
+              <div className="flex items-center gap-2 text-brand-teal font-semibold text-sm uppercase tracking-wider">
+                <Handshake size={18} aria-hidden="true" />
+                {initiative.partner.role}
+              </div>
+              <h2 id="technology-partner-heading" className="mt-2 text-2xl sm:text-3xl font-bold text-slate-900">
+                {initiative.partner.name}
+              </h2>
+              <p className="mt-4 text-slate-600 leading-relaxed text-lg">
+                {initiative.partner.summary}
+              </p>
+              <a
+                href={technologyPartner.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 mt-4 text-sm font-semibold text-brand-teal hover:underline"
+              >
+                {technologyPartner.name}
+                <ExternalLink size={14} aria-hidden="true" />
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="py-16 lg:py-20 bg-slate-50" aria-labelledby="initiative-programs-heading">
+      <section className="py-16 lg:py-20 bg-slate-50" aria-labelledby="youth-opportunity-heading">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid sm:grid-cols-2 gap-6">
+            <article className="p-6 lg:p-8 rounded-2xl bg-white border border-slate-100">
+              <Briefcase className="text-brand-teal mb-4" size={28} aria-hidden="true" />
+              <h2 id="youth-opportunity-heading" className="text-xl font-bold text-slate-900">
+                Youth Employment &amp; Opportunity
+              </h2>
+              <p className="mt-3 text-slate-600 leading-relaxed">{initiative.partner.employment}</p>
+            </article>
+            <article className="p-6 lg:p-8 rounded-2xl bg-white border border-slate-100">
+              <PiggyBank className="text-brand-teal mb-4" size={28} aria-hidden="true" />
+              <h2 className="text-xl font-bold text-slate-900">How Our Work Is Sustained</h2>
+              <p className="mt-3 text-slate-600 leading-relaxed mb-4">{initiative.partner.support}</p>
+              <ul className="space-y-2">
+                {initiative.fundingSources.map((source) => (
+                  <li key={source} className="flex items-start gap-2 text-sm text-slate-600">
+                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-brand-teal shrink-0" aria-hidden="true" />
+                    {source}
+                  </li>
+                ))}
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 lg:py-20 bg-white" aria-labelledby="initiative-programs-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 id="initiative-programs-heading" className="text-2xl sm:text-3xl font-bold text-slate-900 text-center mb-12">
             What We Focus On
@@ -110,7 +168,7 @@ export default function InitiativePage() {
             {programs.map((program) => (
               <article
                 key={program.title}
-                className="p-6 lg:p-8 rounded-2xl bg-white border border-slate-100 hover:border-teal-200 hover:shadow-lg transition-all"
+                className="p-6 lg:p-8 rounded-2xl bg-slate-50 border border-slate-100 hover:border-teal-200 hover:shadow-lg transition-all"
               >
                 <program.icon className="text-brand-teal mb-4" size={28} aria-hidden="true" />
                 <h3 className="text-xl font-semibold text-slate-900">{program.title}</h3>
@@ -121,15 +179,17 @@ export default function InitiativePage() {
         </div>
       </section>
 
+      <UpcomingPrograms />
+
       <section className="py-16 bg-gradient-to-r from-brand-teal to-brand-blue" aria-labelledby="initiative-partner-heading">
         <div className="max-w-3xl mx-auto px-4 text-center">
           <h2 id="initiative-partner-heading" className="text-2xl sm:text-3xl font-bold text-white">
             Partner With Us
           </h2>
           <p className="mt-4 text-white/90 text-lg">
-            Interested in supporting digital inclusion, scholarships, or innovation
-            programs? Contact HealingTech Labs for partnership and collaboration
-            opportunities.
+            Interested in supporting digital inclusion, scholarships, youth employment, or community
+            programs? We welcome grants, donations, and partnerships from organisations and individuals
+            who share our mission.
           </p>
           <Link
             href="/requirements"
