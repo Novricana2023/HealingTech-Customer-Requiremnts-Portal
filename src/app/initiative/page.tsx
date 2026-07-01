@@ -1,12 +1,21 @@
 import Link from "next/link";
 import { Heart, GraduationCap, Users, Lightbulb, Target, ArrowLeft } from "lucide-react";
 import { company } from "@/data/company";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "HealingTech Initiative | HealingTech Labs",
+export const metadata = createPageMetadata({
+  title: "HealingTech Initiative",
   description:
-    "HealingTech Initiative is the social impact arm of HealingTech Labs — digital skills, scholarships, innovation, and inclusion for Africa's future.",
-};
+    "HealingTech Initiative is the social impact arm of HealingTech Labs — digital skills, scholarships, innovation programs, and inclusion for Africa's future.",
+  path: "/initiative",
+  keywords: [
+    "HealingTech Initiative",
+    "digital skills Africa",
+    "technology scholarships",
+    "social impact technology",
+    "digital inclusion",
+  ],
+});
 
 const programs = [
   {
@@ -44,12 +53,12 @@ export default function InitiativePage() {
             href="/"
             className="inline-flex items-center gap-2 text-sm text-slate-600 hover:text-brand-teal mb-8"
           >
-            <ArrowLeft size={16} />
+            <ArrowLeft size={16} aria-hidden="true" />
             Back to Home
           </Link>
 
           <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal-50 border border-teal-100 text-teal-800 text-sm font-semibold">
-            <Heart size={16} />
+            <Heart size={16} aria-hidden="true" />
             Social Impact Arm of HealingTech Labs
           </span>
 
@@ -69,9 +78,9 @@ export default function InitiativePage() {
         </div>
       </section>
 
-      <section className="py-16 lg:py-20 bg-white">
+      <section className="py-16 lg:py-20 bg-white" aria-labelledby="initiative-connection-heading">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">
+          <h2 id="initiative-connection-heading" className="text-2xl sm:text-3xl font-bold text-slate-900">
             How It Connects to HealingTech Labs
           </h2>
           <div className="mt-6 space-y-4 text-slate-600 leading-relaxed text-lg">
@@ -92,29 +101,29 @@ export default function InitiativePage() {
         </div>
       </section>
 
-      <section className="py-16 lg:py-20 bg-slate-50">
+      <section className="py-16 lg:py-20 bg-slate-50" aria-labelledby="initiative-programs-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 text-center mb-12">
+          <h2 id="initiative-programs-heading" className="text-2xl sm:text-3xl font-bold text-slate-900 text-center mb-12">
             What We Focus On
           </h2>
           <div className="grid sm:grid-cols-2 gap-6">
             {programs.map((program) => (
-              <div
+              <article
                 key={program.title}
                 className="p-6 lg:p-8 rounded-2xl bg-white border border-slate-100 hover:border-teal-200 hover:shadow-lg transition-all"
               >
-                <program.icon className="text-brand-teal mb-4" size={28} />
+                <program.icon className="text-brand-teal mb-4" size={28} aria-hidden="true" />
                 <h3 className="text-xl font-semibold text-slate-900">{program.title}</h3>
                 <p className="mt-2 text-slate-600 leading-relaxed">{program.description}</p>
-              </div>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-16 bg-gradient-to-r from-brand-teal to-brand-blue">
+      <section className="py-16 bg-gradient-to-r from-brand-teal to-brand-blue" aria-labelledby="initiative-partner-heading">
         <div className="max-w-3xl mx-auto px-4 text-center">
-          <h2 className="text-2xl sm:text-3xl font-bold text-white">
+          <h2 id="initiative-partner-heading" className="text-2xl sm:text-3xl font-bold text-white">
             Partner With Us
           </h2>
           <p className="mt-4 text-white/90 text-lg">

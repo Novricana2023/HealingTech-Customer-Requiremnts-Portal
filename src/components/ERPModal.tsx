@@ -45,6 +45,7 @@ export default function ERPModal({ product, onClose }: ERPModalProps) {
               src={product.image}
               alt={product.name}
               fill
+              sizes="(max-width: 640px) 100vw, 800px"
               className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent" />
@@ -130,6 +131,8 @@ export default function ERPModal({ product, onClose }: ERPModalProps) {
                   alt={`${product.name} dashboard`}
                   width={800}
                   height={450}
+                  sizes="(max-width: 640px) 100vw, 800px"
+                  loading="lazy"
                   className="w-full h-auto"
                 />
               </div>

@@ -41,7 +41,9 @@ export async function POST(request: NextRequest) {
     });
 
     if (!openAIResponse.ok) {
-      console.error("OpenAI error:", await openAIResponse.text());
+      if (process.env.NODE_ENV === "development") {
+        console.error("OpenAI error:", await openAIResponse.text());
+      }
       return new Response(JSON.stringify({ useLocal: true }), {
         headers: { "Content-Type": "application/json" },
       });
@@ -86,7 +88,9 @@ export async function POST(request: NextRequest) {
             }
           }
         } catch (err) {
-          console.error("Stream error:", err);
+          if (process.env.NODE_ENV === "development") {
+            console.error("Stream error:", err);
+          }
         } finally {
           controller.close();
         }
@@ -101,7 +105,9 @@ export async function POST(request: NextRequest) {
       },
     });
   } catch (error) {
-    console.error("Chat API error:", error);
+    if (process.env.NODE_ENV === "development") {
+      console.error("Chat API error:", error);
+    }
     return new Response(JSON.stringify({ useLocal: true }), {
       headers: { "Content-Type": "application/json" },
     });

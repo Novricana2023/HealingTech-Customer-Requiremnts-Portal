@@ -49,7 +49,7 @@ export default function Navbar() {
           : "bg-white/80 backdrop-blur-md border-b border-slate-100/80"
       }`}
     >
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
         <div
           className={`flex items-center justify-between transition-all duration-500 ${
             scrolled ? "h-16 lg:h-20" : "h-20 lg:h-28"
@@ -99,6 +99,8 @@ export default function Navbar() {
             onClick={() => setOpen(!open)}
             className="lg:hidden p-2.5 rounded-xl text-slate-600 hover:bg-teal-50 hover:text-brand-teal transition-colors"
             aria-label="Toggle menu"
+            aria-expanded={open}
+            aria-controls="mobile-navigation"
           >
             {open ? <X size={24} /> : <Menu size={24} />}
           </motion.button>
@@ -113,6 +115,7 @@ export default function Navbar() {
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
             className="lg:hidden bg-white/98 backdrop-blur-xl border-t border-slate-100 overflow-hidden"
+            id="mobile-navigation"
           >
             <motion.div
               variants={menuVariants}

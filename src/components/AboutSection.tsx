@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Heart } from "lucide-react";
+import { Heart } from "lucide-react";
 import { company } from "@/data/company";
 
 export default function AboutSection() {

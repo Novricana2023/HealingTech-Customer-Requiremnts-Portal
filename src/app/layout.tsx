@@ -1,35 +1,96 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ClientEnhancements from "@/components/ClientEnhancements";
+import Analytics from "@/components/Analytics";
+import { OrganizationJsonLd, WebSiteJsonLd } from "@/components/JsonLd";
+import { siteConfig, absoluteUrl } from "@/lib/site-config";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: "swap",
+  preload: true,
 });
 
+export const viewport: Viewport = {
+  themeColor: "#0d9488",
+  width: "device-width",
+  initialScale: 1,
+  colorScheme: "light",
+};
+
 export const metadata: Metadata = {
-  title: "HealingTech Labs | World-Class Technology for Africa's Digital Future",
-  description:
-    "HealingTech Labs is a modern African technology company and social enterprise — building AI, enterprise software, web & mobile applications, and digital platforms that transform organizations.",
-  keywords: [
-    "HealingTech Labs",
-    "African technology",
-    "AI solutions",
-    "software engineering",
-    "digital transformation",
-    "HealingTech Initiative",
-    "ERP",
-    "web apps",
-  ],
-  openGraph: {
-    title: "HealingTech Labs — Innovation-Driven Technology",
-    description:
-      "Building technology that transforms businesses today while investing in Africa's digital future tomorrow.",
-    type: "website",
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    default: siteConfig.defaultTitle,
+    template: `%s | ${siteConfig.name}`,
   },
+  description: siteConfig.defaultDescription,
+  keywords: [...siteConfig.keywords],
+  authors: [{ name: siteConfig.name, url: siteConfig.url }],
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: siteConfig.url,
+  },
+  openGraph: {
+    type: "website",
+    locale: siteConfig.locale,
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    title: siteConfig.defaultTitle,
+    description: siteConfig.defaultDescription,
+    images: [
+      {
+        url: absoluteUrl(siteConfig.ogImage),
+        width: 1200,
+        height: 630,
+        alt: siteConfig.ogImageAlt,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.defaultTitle,
+    description: siteConfig.defaultDescription,
+    images: [absoluteUrl(siteConfig.ogImage)],
+    creator: siteConfig.twitterHandle,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  icons: {
+    icon: [
+      { url: "/logo.jpeg", type: "image/jpeg" },
+    ],
+    apple: [
+      { url: "/logo.jpeg", sizes: "180x180", type: "image/jpeg" },
+    ],
+  },
+  manifest: "/manifest.webmanifest",
+  ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+    ? {
+        verification: {
+          google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+        },
+      }
+    : {}),
 };
 
 export default function RootLayout({
@@ -39,12 +100,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={inter.variable}>
-      <body className="min-h-screen flex flex-col">
+      <body className="min-h-screen flex flex-col antialiased">
+        <OrganizationJsonLd />
+        <WebSiteJsonLd />
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[200] focus:px-4 focus:py-2 focus:bg-white focus:text-slate-900 focus:rounded-lg focus:shadow-lg focus:ring-2 focus:ring-brand-teal"
+        >
+          Skip to main content
+        </a>
         <Navbar />
-        <main className="flex-1">
+        <main id="main-content" className="flex-1">
           <ClientEnhancements>{children}</ClientEnhancements>
         </main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );

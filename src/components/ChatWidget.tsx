@@ -13,6 +13,7 @@ import {
   quickActions,
   getLocalReply,
 } from "@/lib/chat-knowledge";
+import { createTextRevealer, sleep } from "@/lib/text-revealer";
 import ChatMarkdown from "@/components/ChatMarkdown";
 
 interface Message {
@@ -22,6 +23,7 @@ interface Message {
 }
 
 const POPUP_KEY = "healingtech-labs-chat-popup-seen";
+const THINKING_MS = 550;
 
 export default function ChatWidget() {
   const [open, setOpen] = useState(false);
@@ -29,8 +31,11 @@ export default function ChatWidget() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [typing, setTyping] = useState(false);
   const [streaming, setStreaming] = useState(false);
+  const [streamingId, setStreamingId] = useState<string | null>(null);
   const [input, setInput] = useState("");
   const bottomRef = useRef<HTMLDivElement>(null);
+  const welcomeStarted = useRef(false);
+  const revealerRef = useRef<ReturnType<typeof createTextRevealer> | null>(null);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -52,18 +57,61 @@ export default function ChatWidget() {
   };
 
   useEffect(() => {
-    if (open && messages.length === 0) {
-      setTyping(true);
-      setTimeout(() => {
-        setMessages([{ id: "welcome", from: "bot", text: welcomeMessage }]);
-        setTyping(false);
-      }, 600);
-    }
-  }, [open, messages.length]);
-
-  useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, typing, streaming]);
+
+  useEffect(() => {
+    return () => revealerRef.current?.cancel();
+  }, []);
+
+  const updateBotMessage = useCallback((botId: string, text: string) => {
+    setMessages((prev) => prev.map((m) => (m.id === botId ? { ...m, text } : m)));
+  }, []);
+
+  const revealBotReply = useCallback(
+    async (botId: string, fullText: string, { thinking = true }: { thinking?: boolean } = {}) => {
+      revealerRef.current?.cancel();
+
+      if (thinking) {
+        setTyping(true);
+        await sleep(THINKING_MS);
+        setTyping(false);
+      }
+
+      setStreaming(true);
+      setStreamingId(botId);
+      setMessages((prev) => {
+        if (prev.some((m) => m.id === botId)) {
+          return prev.map((m) => (m.id === botId ? { ...m, text: "" } : m));
+        }
+        return [...prev, { id: botId, from: "bot", text: "" }];
+      });
+
+      await new Promise<void>((resolve) => {
+        const revealer = createTextRevealer(
+          (text) => updateBotMessage(botId, text),
+          () => {
+            revealerRef.current = null;
+            setStreaming(false);
+            setStreamingId(null);
+            resolve();
+          }
+        );
+        revealerRef.current = revealer;
+        revealer.push(fullText);
+        revealer.finish();
+      });
+    },
+    [updateBotMessage]
+  );
+
+  useEffect(() => {
+    if (!open || messages.length > 0 || welcomeStarted.current) return;
+    welcomeStarted.current = true;
+
+    const botId = "welcome";
+    void revealBotReply(botId, welcomeMessage);
+  }, [open, messages.length, revealBotReply]);
 
   const openWhatsApp = useCallback(() => {
     window.open(
@@ -75,27 +123,22 @@ export default function ChatWidget() {
     );
   }, []);
 
-  const handleWhatsAppAction = useCallback(() => {
-    setTyping(true);
-    setTimeout(() => {
-      setMessages((prev) => [
-        ...prev,
-        {
-          id: Date.now().toString(),
-          from: "bot",
-          text: "Opening WhatsApp so you can speak with our team directly. We typically respond quickly!",
-        },
-      ]);
-      setTyping(false);
-      setTimeout(openWhatsApp, 500);
-    }, 700);
-  }, [openWhatsApp]);
+  const handleWhatsAppAction = useCallback(async () => {
+    const botId = `bot-${Date.now()}`;
+    await revealBotReply(
+      botId,
+      "Opening WhatsApp so you can speak with our team directly. We typically respond quickly!"
+    );
+    setTimeout(openWhatsApp, 400);
+  }, [openWhatsApp, revealBotReply]);
 
   const streamReply = useCallback(
     async (userText: string, history: Message[]) => {
       const botId = `bot-${Date.now()}`;
+      revealerRef.current?.cancel();
       setTyping(true);
       setStreaming(false);
+      setStreamingId(null);
 
       try {
         const res = await fetch("/api/chat", {
@@ -113,70 +156,85 @@ export default function ChatWidget() {
           if (data.useLocal) {
             const local = getLocalReply(userText);
             if (local === "ACTION:WHATSAPP") {
-              handleWhatsAppAction();
+              setTyping(false);
+              await handleWhatsAppAction();
               return;
             }
             setTyping(false);
-            setMessages((prev) => [...prev, { id: botId, from: "bot", text: local }]);
+            await revealBotReply(botId, local, { thinking: false });
             return;
           }
         }
 
         if (!res.body) throw new Error("No stream");
 
+        await sleep(THINKING_MS);
         setTyping(false);
         setStreaming(true);
+        setStreamingId(botId);
         setMessages((prev) => [...prev, { id: botId, from: "bot", text: "" }]);
 
         const reader = res.body.getReader();
         const decoder = new TextDecoder();
         let fullText = "";
 
-        while (true) {
-          const { done, value } = await reader.read();
-          if (done) break;
-          const chunk = decoder.decode(value, { stream: true });
-          fullText += chunk;
-          const snapshot = fullText;
-          setMessages((prev) =>
-            prev.map((m) => (m.id === botId ? { ...m, text: snapshot } : m))
+        await new Promise<void>((resolve) => {
+          const revealer = createTextRevealer(
+            (text) => updateBotMessage(botId, text),
+            () => {
+              revealerRef.current = null;
+              setStreaming(false);
+              setStreamingId(null);
+              resolve();
+            }
           );
-        }
+          revealerRef.current = revealer;
 
-        setStreaming(false);
+          const pump = async () => {
+            while (true) {
+              const { done, value } = await reader.read();
+              if (done) break;
+              const chunk = decoder.decode(value, { stream: true });
+              fullText += chunk;
+              revealer.push(chunk);
+            }
+            revealer.finish();
+          };
+
+          void pump();
+        });
+
         if (!fullText.trim()) {
           const local = getLocalReply(userText);
           if (local === "ACTION:WHATSAPP") {
             setMessages((prev) => prev.filter((m) => m.id !== botId));
-            handleWhatsAppAction();
+            await handleWhatsAppAction();
             return;
           }
-          setMessages((prev) =>
-            prev.map((m) => (m.id === botId ? { ...m, text: local } : m))
-          );
+          await revealBotReply(botId, local, { thinking: false });
         }
       } catch {
         setTyping(false);
         setStreaming(false);
+        setStreamingId(null);
         const local = getLocalReply(userText);
         if (local === "ACTION:WHATSAPP") {
-          handleWhatsAppAction();
+          await handleWhatsAppAction();
           return;
         }
-        setMessages((prev) => [...prev, { id: botId, from: "bot", text: local }]);
+        await revealBotReply(botId, local, { thinking: false });
       }
     },
-    [handleWhatsAppAction]
+    [handleWhatsAppAction, revealBotReply, updateBotMessage]
   );
 
   const handleUserMessage = (text: string) => {
     const trimmed = text.trim();
     if (!trimmed || typing || streaming) return;
 
-    setMessages((prev) => {
-      streamReply(trimmed, prev);
-      return [...prev, { id: `user-${Date.now()}`, from: "user", text: trimmed }];
-    });
+    const history = messages;
+    setMessages((prev) => [...prev, { id: `user-${Date.now()}`, from: "user", text: trimmed }]);
+    void streamReply(trimmed, history);
   };
 
   const handleSend = () => {
@@ -204,7 +262,7 @@ export default function ChatWidget() {
               </button>
               <div className="flex gap-3">
                 <div className="shrink-0 w-11 h-11 rounded-full overflow-hidden ring-2 ring-teal-100">
-                  <Image src="/logo.jpeg" alt="" width={44} height={44} className="object-cover w-full h-full" />
+                  <Image src="/logo.jpeg" alt="" aria-hidden="true" width={44} height={44} className="object-cover w-full h-full" />
                 </div>
                 <div className="pr-4">
                   <p className="text-xs font-semibold text-brand-teal flex items-center gap-1">
@@ -265,7 +323,19 @@ export default function ChatWidget() {
                         : "bg-white text-slate-700 border border-slate-100 shadow-sm rounded-bl-md"
                     }`}
                   >
-                    {msg.from === "bot" ? <ChatMarkdown content={msg.text || "..."} /> : msg.text}
+                    {msg.from === "bot" ? (
+                      <>
+                        <ChatMarkdown content={msg.text || "\u200b"} />
+                        {streaming && streamingId === msg.id && (
+                          <span
+                            className="inline-block w-0.5 h-4 bg-brand-teal ml-0.5 align-middle animate-pulse"
+                            aria-hidden="true"
+                          />
+                        )}
+                      </>
+                    ) : (
+                      msg.text
+                    )}
                   </div>
                 </motion.div>
               ))}
