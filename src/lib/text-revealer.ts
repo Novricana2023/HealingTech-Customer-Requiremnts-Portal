@@ -12,7 +12,7 @@ type TextRevealer = {
 };
 
 /**
- * Queues incoming text and reveals it gradually — ChatGPT-style typing
+ * Queues incoming text and reveals it gradually, ChatGPT-style typing
  * even when the full answer arrives at once (local fallback).
  */
 export function createTextRevealer(

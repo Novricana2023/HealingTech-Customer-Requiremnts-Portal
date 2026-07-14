@@ -2,7 +2,7 @@ export const company = {
   name: "HealingTech Labs",
   tagline: "Software, Automation & Digital Solutions",
   heroIntro:
-    "HealingTech Labs is a Malawi technology company focused on AI, software, and digital transformation. We help businesses automate, build intelligent software, websites, mobile apps, and enterprise systems for organizations in Malawi, across Africa, and worldwide.",
+    "HealingTech Labs is a Malawi technology company focused on AI, software, and digital transformation. We help businesses automate, build intelligent software, websites, mobile apps, and enterprise systems, serving organizations in Malawi, across Africa, and worldwide.",
   closingMessage:
     "We build AI-powered technology that helps businesses automate, scale, and compete, from Malawi to the world.",
   vision:
