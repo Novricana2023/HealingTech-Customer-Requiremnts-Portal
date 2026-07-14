@@ -40,7 +40,6 @@ body {
   font-family: var(--font-serif);
   font-weight: 600;
   letter-spacing: -0.02em;
-  color: var(--color-brand-navy-dark);
 }
 
 .section-label {

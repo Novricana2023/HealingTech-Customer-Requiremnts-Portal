@@ -22,7 +22,7 @@ export default function RequirementsCTA() {
         <div className="grid lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-8">
             <p className="section-label">Requirements portal</p>
-            <h2 className="mt-2 font-display text-2xl sm:text-3xl font-semibold text-white tracking-tight">
+            <h2 className="mt-2 font-display text-2xl sm:text-3xl font-semibold tracking-tight text-white">
               Ready to Start Your Project?
             </h2>
             <p className="mt-4 text-base text-white/85 leading-relaxed max-w-2xl">
