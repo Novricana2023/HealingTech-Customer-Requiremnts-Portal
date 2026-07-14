@@ -9,8 +9,8 @@ import { brand } from "@/lib/brand";
 
 const navLinks = [
   { label: "About", href: "/#about" },
-  { label: "Vision & Mission", href: "/#vision-mission" },
   { label: "Services", href: "/#services" },
+  { label: "Bootcamps", href: "/#bootcamps" },
 ];
 
 export default function Navbar() {

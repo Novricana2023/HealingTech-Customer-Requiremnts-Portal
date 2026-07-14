@@ -37,6 +37,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/#bootcamps" className="text-gray-300 hover:text-white transition-colors">
+                  Coding Bootcamps
+                </Link>
+              </li>
+              <li>
                 <Link href="/requirements" className="text-gray-300 hover:text-white transition-colors">
                   Requirements Portal
                 </Link>

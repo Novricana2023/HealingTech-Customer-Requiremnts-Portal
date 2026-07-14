@@ -117,6 +117,11 @@ const topics: Topic[] = [
       "To start a project:\n\n1. Visit /requirements\n2. Select your service (AI, Website, Web/Mobile App, or ERP)\n3. Complete the requirements form with as much detail as possible\n\nOur team will review and design the right solution for you.",
   },
   {
+    keywords: ["bootcamp", "boot camp", "coding class", "children", "teen", "learn code", "enroll", "course"],
+    reply:
+      "HealingTech Labs runs paid AI, coding, and innovation bootcamps for children, teens, and motivated learners. Programs include foundational coding for ages 8 to 12, teen tracks in Python and web development, and an innovation and AI track for students ready to go deeper.\n\nTo enroll, visit the Bootcamps section on our homepage and click Enroll, or email us to register.",
+  },
+  {
     keywords: ["price", "cost", "quote", "pricing", "budget"],
     reply:
       "Every project is unique. We provide tailored quotes after understanding your requirements. Complete the Requirements Portal form or contact us on WhatsApp for a conversation with our team.",

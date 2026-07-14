@@ -7,8 +7,8 @@ export default function CorporateHero() {
   return (
     <section className="border-b border-[var(--color-border)] bg-white">
       <div className="container-page section-padding">
-        <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-          <div className="lg:col-span-6">
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+          <div className="lg:col-span-6 lg:order-1">
             <p className="section-label">HealingTech Labs</p>
             <h1 className="section-heading mt-3 text-3xl sm:text-4xl max-w-xl">
               Software, Automation &amp; Intelligent Solutions
@@ -19,17 +19,17 @@ export default function CorporateHero() {
                 Start Your Project
                 <ArrowRight size={16} />
               </Link>
-              <Link href="#services" className="btn-secondary">
-                Explore Our Services
+              <Link href="#bootcamps" className="btn-secondary">
+                Coding Bootcamps
               </Link>
             </div>
           </div>
 
-          <div className="lg:col-span-6">
-            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg border border-[var(--color-border)]">
+          <div className="lg:col-span-6 lg:order-2">
+            <div className="relative aspect-[5/4] w-full overflow-hidden rounded-lg border border-[var(--color-border)]">
               <Image
-                src="/images/cover-tech-hero.jpg"
-                alt="HealingTech Labs software and technology solutions"
+                src="/images/r3.jpg"
+                alt="HealingTech Labs team collaborating on technology projects"
                 fill
                 className="object-cover"
                 priority

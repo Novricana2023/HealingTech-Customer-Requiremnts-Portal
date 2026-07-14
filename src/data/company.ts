@@ -16,32 +16,6 @@ export const company = {
   /** Used by AI assistant only when visitors ask about location */
   chatLocation:
     "HealingTech Labs operates in Malawi and Kenya, serving clients across Africa and internationally.",
-  innovationPillars: [
-    {
-      title: "AI & Intelligent Systems",
-      description:
-        "Custom AI, automation, chatbots, and data-driven platforms engineered for real business outcomes.",
-      icon: "sparkles",
-    },
-    {
-      title: "Enterprise Software",
-      description:
-        "ERP systems, government portals, learning platforms, and mission-critical digital infrastructure.",
-      icon: "building",
-    },
-    {
-      title: "Digital Products",
-      description:
-        "Web apps, mobile applications, e-commerce, marketplaces, and cloud-native platforms built to scale.",
-      icon: "rocket",
-    },
-    {
-      title: "Built for Scale",
-      description:
-        "Professional engineering, secure architecture, and solutions designed to grow with your organization.",
-      icon: "heart",
-    },
-  ],
   stats: [
     { value: "10+", label: "ERP Platforms" },
     { value: "AI-First", label: "Engineering" },
