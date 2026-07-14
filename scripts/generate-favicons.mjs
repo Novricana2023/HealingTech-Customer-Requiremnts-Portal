@@ -1,11 +1,11 @@
 import sharp from "sharp";
-import { mkdir, copyFile, writeFile } from "fs/promises";
+import { mkdir, copyFile } from "fs/promises";
 import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, "..");
-const source = join(root, "public/images/Nyuwani.jpeg");
+const source = join(root, "public/images/logo.png");
 const faviconDir = join(root, "public/favicon");
 const appDir = join(root, "src/app");
 
@@ -23,12 +23,8 @@ for (const size of sizes) {
     .toFile(join(faviconDir, `icon-${size}x${size}.png`));
 }
 
-await sharp(source)
-  .jpeg({ quality: 92 })
-  .toFile(join(root, "public/logo.jpeg"));
-
 await copyFile(join(faviconDir, "icon-32x32.png"), join(appDir, "icon.png"));
 await copyFile(join(faviconDir, "icon-180x180.png"), join(appDir, "apple-icon.png"));
 await copyFile(join(faviconDir, "icon-32x32.png"), join(root, "public/favicon.ico"));
 
-console.log("Favicons generated:", sizes.map((s) => `${s}x${s}`).join(", "));
+console.log("Favicons generated from logo.png:", sizes.map((s) => `${s}x${s}`).join(", "));

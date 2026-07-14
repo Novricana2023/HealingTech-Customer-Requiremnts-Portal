@@ -9,10 +9,10 @@ FAVICON_DIR = ROOT / "public" / "favicon"
 APP_DIR = ROOT / "src" / "app"
 
 SIZES = [16, 32, 48, 180, 192, 512]
-SMALL_SIZES = {16, 32, 48}
 
 
 def square_icon(img: Image.Image, size: int) -> Image.Image:
+    """Scale the full logo to fit a square canvas — no cropping."""
     canvas = Image.new("RGBA", (size, size), (255, 255, 255, 255))
     ratio = min(size / img.width, size / img.height)
     new_w = max(1, int(img.width * ratio))
@@ -25,25 +25,15 @@ def square_icon(img: Image.Image, size: int) -> Image.Image:
     return canvas.convert("RGB")
 
 
-def icon_crop(img: Image.Image) -> Image.Image:
-    """Square crop of the brain mark — reads clearly at favicon sizes."""
-    w, h = img.size
-    side = min(w, int(h * 0.42))
-    left = (w - side) // 2
-    return img.crop((left, 0, left + side, side))
-
-
 def main() -> None:
     if not SOURCE.exists():
         raise FileNotFoundError(f"Logo not found: {SOURCE}")
 
     FAVICON_DIR.mkdir(parents=True, exist_ok=True)
     source = Image.open(SOURCE).convert("RGBA")
-    mark = icon_crop(source)
 
     for size in SIZES:
-        src = mark if size in SMALL_SIZES else source
-        icon = square_icon(src, size)
+        icon = square_icon(source, size)
         icon.save(FAVICON_DIR / f"icon-{size}x{size}.png", optimize=True)
 
     # Remove deprecated logo files
