@@ -1,8 +1,8 @@
 /** Brand assets — single source for logo and favicon paths */
 export const brand = {
-  logo: "/images/Nyuwani.jpeg",
-  logoAlt: "HealingTech Labs logo — Innovate, Build, Transform",
-  /** Square logo for Google Search structured data (min 112×112) */
+  logo: "/images/logo.png",
+  logoAlt: "HealingTech Labs — AI and innovation lab logo",
+  /** Square mark for Google Search & social (min 112×112) */
   logoSquare: "/favicon/icon-512x512.png",
   favicon: {
     ico: "/favicon.ico",

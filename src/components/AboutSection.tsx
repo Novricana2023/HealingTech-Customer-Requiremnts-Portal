@@ -17,7 +17,7 @@ export default function AboutSection() {
               About HealingTech Labs
             </span>
             <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-slate-900">
-              A Leading African Technology Company
+              Malawi&apos;s AI &amp; Innovation Lab
             </h2>
             <p className="mt-6 text-lg text-slate-600 leading-relaxed">{company.about}</p>
             <p className="mt-4 text-lg text-slate-600 leading-relaxed">

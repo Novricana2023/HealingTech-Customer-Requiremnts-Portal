@@ -5,9 +5,10 @@ import { createPageMetadata } from "@/lib/seo";
 export const metadata = createPageMetadata({
   title: "Customer Requirements Portal",
   description:
-    "Share your project requirements with HealingTech Labs. Select AI, website, web and mobile app, or ERP services and complete the requirements form to start your project.",
+    "Share your project requirements with HealingTech Labs, a Malawi software company. Start AI, automation, website, web and mobile app, or ERP projects.",
   path: "/requirements",
   keywords: [
+    "Malawi software company",
     "HealingTech Labs requirements",
     "project requirements form",
     "AI project brief",

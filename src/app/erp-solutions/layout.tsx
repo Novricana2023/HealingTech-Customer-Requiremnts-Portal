@@ -3,10 +3,11 @@ import { createPageMetadata } from "@/lib/seo";
 export const metadata = createPageMetadata({
   title: "Explore ERP Solutions",
   description:
-    "Browse HealingTech Labs enterprise ERP platforms — learning management, government systems, healthcare, finance, HR, legal, agriculture, and more. Customizable for your organization.",
+    "Browse HealingTech Labs ERP platforms from a Malawi software company — learning, government, healthcare, finance, HR, and enterprise systems.",
   path: "/erp-solutions",
   keywords: [
-    "ERP solutions Africa",
+    "ERP Malawi",
+    "ERP solutions Malawi",
     "enterprise resource planning",
     "LMS platform",
     "government ERP",

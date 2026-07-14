@@ -1,16 +1,16 @@
 export const company = {
   name: "HealingTech Labs",
-  tagline: "Building Technology That Transforms Africa's Digital Future",
+  tagline: "Malawi's AI & Innovation Lab — Software, Automation & Digital Solutions",
   heroIntro:
-    "HealingTech Labs is a world-class African technology company and social enterprise. We build intelligent software, AI solutions, enterprise systems, and digital platforms for organizations across the continent and beyond.",
+    "HealingTech Labs is Malawi's AI and innovation-focused technology company. We help businesses automate, build intelligent software, websites, mobile apps, and enterprise systems — serving organizations in Malawi, across Africa, and worldwide.",
   closingMessage:
-    "We build technology that transforms businesses today while investing in the people who will build Africa's digital future tomorrow.",
+    "We build AI-powered technology that helps businesses automate, scale, and compete — from Malawi to the world.",
   vision:
-    "To be a leading African force in world-class digital innovation — where technology built on the continent powers businesses, governments, and communities at global standards.",
+    "To be Malawi's leading AI and innovation lab — where world-class software built on the continent powers businesses, governments, and communities at global standards.",
   mission:
-    "HealingTech Labs designs and delivers intelligent software, AI solutions, enterprise systems, and digital platforms that help organizations scale with excellence and long-term impact.",
+    "HealingTech Labs designs and delivers AI solutions, business automation, custom software, websites, mobile applications, and enterprise systems that help organizations in Malawi and beyond work smarter and scale with confidence.",
   about:
-    "HealingTech Labs is a Malawi-based technology company and social enterprise focused on Africa's digital transformation — serving organizations across the continent and worldwide. We combine world-class software engineering, artificial intelligence, and enterprise architecture with a long-term commitment to innovation that scales.",
+    "HealingTech Labs is a Malawi-based AI and innovation lab focused on intelligent software, automation, and digital transformation. We build websites, web and mobile applications, ERP systems, and custom software solutions that help businesses automate processes, improve efficiency, and grow — for clients in Malawi, across Africa, and internationally.",
   founder:
     "HealingTech Labs was founded by Ms. Novricana Lungu, a software engineer, AI developer, technology entrepreneur, and advocate for using technology to create meaningful social impact.",
   /** Used by AI assistant only when visitors ask about location */
@@ -46,6 +46,6 @@ export const company = {
     { value: "10+", label: "ERP Platforms" },
     { value: "AI-First", label: "Engineering" },
     { value: "360°", label: "Digital Solutions" },
-    { value: "Africa", label: "Focused" },
+    { value: "Malawi", label: "AI & Innovation Lab" },
   ],
 };

@@ -49,9 +49,8 @@ export default function Services() {
             Our Services
           </h2>
           <p className="mt-4 text-lg text-slate-600">
-            From AI and intelligent systems to enterprise platforms and digital
-            products — HealingTech Labs delivers technology built for scale,
-            trust, and long-term impact.
+            From AI and business automation to websites, mobile apps, and enterprise
+            platforms — Malawi&apos;s innovation lab for software that helps you scale.
           </p>
         </motion.div>
 

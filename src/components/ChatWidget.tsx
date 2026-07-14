@@ -263,7 +263,7 @@ export default function ChatWidget() {
               </button>
               <div className="flex gap-3">
                 <div className="shrink-0 w-11 h-11 rounded-full overflow-hidden ring-2 ring-teal-100">
-                  <Image src={brand.logo} alt="" aria-hidden="true" width={44} height={44} className="object-cover w-full h-full" />
+                  <Image src={brand.logo} alt="" aria-hidden="true" width={44} height={44} className="object-contain w-full h-full" />
                 </div>
                 <div className="pr-4">
                   <p className="text-xs font-semibold text-brand-teal flex items-center gap-1">
@@ -291,7 +291,7 @@ export default function ChatWidget() {
             <div className="bg-gradient-to-r from-brand-teal to-brand-blue px-4 py-4 flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full overflow-hidden ring-2 ring-white/40 bg-white">
-                  <Image src={brand.logo} alt={brand.logoAlt} width={40} height={40} className="object-cover w-full h-full" />
+                  <Image src={brand.logo} alt={brand.logoAlt} width={40} height={40} className="object-contain w-full h-full" />
                 </div>
                 <div>
                   <p className="text-white font-semibold text-sm flex items-center gap-1.5">
