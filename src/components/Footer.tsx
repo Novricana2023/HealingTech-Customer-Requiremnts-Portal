@@ -27,22 +27,22 @@ export default function Footer() {
             </p>
             <ul className="space-y-2.5 text-sm">
               <li>
-                <Link href="/#about" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="/about" className="text-gray-300 hover:text-white transition-colors">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/#ai-solutions" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="/ai-solutions" className="text-gray-300 hover:text-white transition-colors">
                   AI Solutions
                 </Link>
               </li>
               <li>
-                <Link href="/#services" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="/services" className="text-gray-300 hover:text-white transition-colors">
                   Our Services
                 </Link>
               </li>
               <li>
-                <Link href="/#bootcamps" className="text-gray-300 hover:text-white transition-colors">
+                <Link href="/bootcamps" className="text-gray-300 hover:text-white transition-colors">
                   Coding Bootcamps
                 </Link>
               </li>
@@ -103,7 +103,7 @@ export default function Footer() {
             <Link href="/privacy" className="hover:text-gray-300 transition-colors">
               Privacy Policy
             </Link>
-            <Link href="/#about" className="hover:text-gray-300 transition-colors">
+            <Link href="/about" className="hover:text-gray-300 transition-colors">
               About
             </Link>
           </div>

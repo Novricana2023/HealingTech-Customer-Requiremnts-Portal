@@ -20,7 +20,7 @@ export default function CorporateHero() {
                 Start Your Project
                 <ArrowRight size={16} />
               </Link>
-              <Link href="#ai-solutions" className="btn-secondary">
+              <Link href="/ai-solutions" className="btn-secondary">
                 Our AI Solutions
               </Link>
             </div>

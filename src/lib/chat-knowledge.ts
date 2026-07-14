@@ -119,7 +119,7 @@ const topics: Topic[] = [
   {
     keywords: ["bootcamp", "boot camp", "coding class", "children", "teen", "learn code", "enroll", "course"],
     reply:
-      "HealingTech Labs runs paid AI, coding, and innovation bootcamps for children, teens, and adults. Programs include coding foundations for ages 8 to 12, teen tracks in Python and web development, adult AI and coding bootcamps, and an innovation and AI track.\n\nTo enroll, open the Bootcamps section, complete the enrollment form (name, contact, age group, course), and click Enroll to send it by email.",
+      "HealingTech Labs runs paid AI, coding, and innovation bootcamps for children, teens, and adults. Programs include coding foundations for ages 8 to 12, teen tracks in Python and web development, adult AI and coding bootcamps, and an innovation and AI track.\n\nTo enroll, visit /bootcamps, complete the enrollment form (name, contact, age group, course), and click Enroll to send it by email.",
   },
   {
     keywords: ["price", "cost", "quote", "pricing", "budget"],

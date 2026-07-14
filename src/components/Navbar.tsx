@@ -8,10 +8,10 @@ import { Menu, X } from "lucide-react";
 import { brand } from "@/lib/brand";
 
 const navLinks = [
-  { label: "About", href: "/#about" },
-  { label: "AI Solutions", href: "/#ai-solutions" },
-  { label: "Services", href: "/#services" },
-  { label: "Bootcamps", href: "/#bootcamps" },
+  { label: "About", href: "/about" },
+  { label: "AI Solutions", href: "/ai-solutions" },
+  { label: "Services", href: "/services" },
+  { label: "Bootcamps", href: "/bootcamps" },
 ];
 
 export default function Navbar() {
@@ -45,15 +45,22 @@ export default function Navbar() {
           </Link>
 
           <div className="hidden lg:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-sm text-gray-600 hover:text-brand-navy transition-colors duration-200"
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const active = pathname === link.href;
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`text-sm transition-colors duration-200 ${
+                    active
+                      ? "text-brand-navy font-semibold"
+                      : "text-gray-600 hover:text-brand-navy"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
             <Link href="/requirements" className="btn-primary">
               Requirements Portal
             </Link>
@@ -78,16 +85,23 @@ export default function Navbar() {
           className="lg:hidden border-t border-[var(--color-border)] bg-white animate-fade-slide-in"
         >
           <div className="container-page py-4 space-y-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setOpen(false)}
-                className="block py-3 text-gray-700 hover:text-brand-navy border-b border-gray-100 last:border-0"
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const active = pathname === link.href;
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setOpen(false)}
+                  className={`block py-3 border-b border-gray-100 last:border-0 transition-colors ${
+                    active
+                      ? "text-brand-navy font-semibold"
+                      : "text-gray-700 hover:text-brand-navy"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
             <Link
               href="/requirements"
               onClick={() => setOpen(false)}
