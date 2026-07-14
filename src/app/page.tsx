@@ -1,5 +1,9 @@
 import CorporateHero from "@/components/CorporateHero";
 import VisionMission from "@/components/VisionMission";
+import AboutSection from "@/components/AboutSection";
+import AISolutionsSection from "@/components/AISolutionsSection";
+import Services from "@/components/Services";
+import BootcampsSection from "@/components/BootcampsSection";
 import RequirementsCTA from "@/components/RequirementsCTA";
 import Reveal from "@/components/Reveal";
 import { createPageMetadata } from "@/lib/seo";
@@ -21,6 +25,18 @@ export default function Home() {
       </Reveal>
       <Reveal delay={0.05}>
         <VisionMission />
+      </Reveal>
+      <Reveal delay={0.05}>
+        <AboutSection />
+      </Reveal>
+      <Reveal delay={0.05}>
+        <AISolutionsSection />
+      </Reveal>
+      <Reveal delay={0.05}>
+        <Services />
+      </Reveal>
+      <Reveal delay={0.05}>
+        <BootcampsSection />
       </Reveal>
       <Reveal delay={0.05}>
         <RequirementsCTA />
