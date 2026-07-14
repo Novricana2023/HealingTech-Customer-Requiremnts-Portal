@@ -4,9 +4,9 @@ import Reveal from "@/components/Reveal";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
-  title: "About Us",
+  title: "About Us | AI & Innovation Lab in Malawi",
   description:
-    "Learn about HealingTech Labs, a Malawi technology company building AI solutions, software, automation, websites, and mobile apps.",
+    "About HealingTech Labs, an AI and innovation lab in Malawi building AI solutions, software, automation, websites, and mobile apps for Malawian organizations and clients worldwide.",
   path: "/about",
 });
 

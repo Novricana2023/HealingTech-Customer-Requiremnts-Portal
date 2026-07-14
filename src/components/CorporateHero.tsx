@@ -10,9 +10,9 @@ export default function CorporateHero() {
       <div className="container-page section-padding">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           <div className="lg:col-span-6">
-            <p className="section-label">HealingTech Labs</p>
+            <p className="section-label">AI Lab &amp; Innovation Lab in Malawi</p>
             <h1 className="section-heading mt-3 text-3xl sm:text-4xl max-w-xl">
-              AI Solutions, Software &amp; Automation
+              Build AI Solutions in Malawi
             </h1>
             <p className="section-lead max-w-lg">{company.heroIntro}</p>
             <div className="mt-8 flex flex-col sm:flex-row gap-3">

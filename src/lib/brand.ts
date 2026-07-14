@@ -1,7 +1,7 @@
 /** Brand assets: single source for logo and favicon paths */
 export const brand = {
   logo: "/images/logo.png",
-  logoAlt: "HealingTech Labs logo",
+  logoAlt: "HealingTech Labs logo, AI and innovation lab in Malawi",
   /** Square mark for Google Search & social (min 112×112) */
   logoSquare: "/favicon/icon-512x512.png",
   favicon: {

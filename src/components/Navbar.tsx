@@ -32,14 +32,14 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-[var(--color-border)] transition-shadow duration-300">
       <nav className="container-page" aria-label="Main navigation">
-        <div className="flex items-center justify-between h-[4.5rem] sm:h-20 lg:h-[5.25rem]">
+        <div className="flex items-center justify-between h-24 sm:h-28 lg:h-32">
           <Link href="/" className="flex items-center shrink-0 min-w-0 py-2">
             <Image
               src={brand.logo}
               alt={brand.logoAlt}
-              width={220}
-              height={72}
-              className="h-12 sm:h-14 lg:h-16 w-auto object-contain"
+              width={360}
+              height={140}
+              className="h-20 sm:h-24 lg:h-[7.5rem] w-auto object-contain"
               priority
             />
           </Link>

@@ -3,9 +3,9 @@ import Reveal from "@/components/Reveal";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
-  title: "AI & Coding Bootcamps",
+  title: "AI & Coding Bootcamps in Malawi",
   description:
-    "Enroll in paid AI, coding, and innovation bootcamps for children, teens, and adults at HealingTech Labs.",
+    "Paid AI, coding, and innovation bootcamps in Malawi for children, teens, and adults. Learn to build with AI at HealingTech Labs.",
   path: "/bootcamps",
 });
 
