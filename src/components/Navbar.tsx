@@ -30,7 +30,7 @@ export default function Navbar() {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-50 bg-white border-b border-[var(--color-border)]">
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-[var(--color-border)] transition-shadow duration-300">
       <nav className="container-page" aria-label="Main navigation">
         <div className="flex items-center justify-between h-[4.5rem] sm:h-20 lg:h-[5.25rem]">
           <Link href="/" className="flex items-center shrink-0 min-w-0 py-2">
@@ -49,7 +49,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm text-gray-600 hover:text-brand-navy transition-colors"
+                className="text-sm text-gray-600 hover:text-brand-navy transition-colors duration-200"
               >
                 {link.label}
               </Link>
@@ -75,7 +75,7 @@ export default function Navbar() {
       {open && (
         <div
           id="mobile-navigation"
-          className="lg:hidden border-t border-[var(--color-border)] bg-white"
+          className="lg:hidden border-t border-[var(--color-border)] bg-white animate-fade-slide-in"
         >
           <div className="container-page py-4 space-y-1">
             {navLinks.map((link) => (

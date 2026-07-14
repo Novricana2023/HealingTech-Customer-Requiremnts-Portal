@@ -5,6 +5,7 @@ import AISolutionsSection from "@/components/AISolutionsSection";
 import Services from "@/components/Services";
 import BootcampsSection from "@/components/BootcampsSection";
 import RequirementsCTA from "@/components/RequirementsCTA";
+import Reveal from "@/components/Reveal";
 import { createPageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 
@@ -26,13 +27,27 @@ export const metadata = createPageMetadata({
 export default function Home() {
   return (
     <>
-      <CorporateHero />
-      <VisionMission />
-      <AboutSection />
-      <AISolutionsSection />
-      <Services />
-      <BootcampsSection />
-      <RequirementsCTA />
+      <Reveal>
+        <CorporateHero />
+      </Reveal>
+      <Reveal delay={0.05}>
+        <VisionMission />
+      </Reveal>
+      <Reveal delay={0.05}>
+        <AboutSection />
+      </Reveal>
+      <Reveal delay={0.05}>
+        <AISolutionsSection />
+      </Reveal>
+      <Reveal delay={0.05}>
+        <Services />
+      </Reveal>
+      <Reveal delay={0.05}>
+        <BootcampsSection />
+      </Reveal>
+      <Reveal delay={0.05}>
+        <RequirementsCTA />
+      </Reveal>
     </>
   );
 }
