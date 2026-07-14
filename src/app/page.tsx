@@ -3,7 +3,6 @@ import VisionMission from "@/components/VisionMission";
 import AboutSection from "@/components/AboutSection";
 import InnovationSection from "@/components/InnovationSection";
 import Services from "@/components/Services";
-import WhyHealingTech from "@/components/WhyHealingTech";
 import RequirementsCTA from "@/components/RequirementsCTA";
 import { createPageMetadata } from "@/lib/seo";
 
@@ -22,7 +21,6 @@ export default function Home() {
       <AboutSection />
       <InnovationSection />
       <Services />
-      <WhyHealingTech />
       <RequirementsCTA />
     </>
   );
