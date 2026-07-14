@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { company } from "@/data/company";
+import { siteImages } from "@/data/site-images";
 
 export default function AboutSection() {
   return (
@@ -9,8 +10,8 @@ export default function AboutSection() {
           <div className="lg:col-span-5">
             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-lg border border-[var(--color-border)]">
               <Image
-                src="/images/r2.jpg"
-                alt="Data-driven software and analytics in professional use"
+                src={siteImages.r2.src}
+                alt={siteImages.r2.alt}
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 40vw"

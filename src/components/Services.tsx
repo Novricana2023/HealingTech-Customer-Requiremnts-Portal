@@ -9,8 +9,8 @@ export default function Services() {
             <p className="section-label">What we build</p>
             <h2 className="section-heading mt-2">Our Services</h2>
             <p className="section-lead">
-              Custom software, AI, websites, mobile apps, and enterprise systems for
-              organizations ready to scale.
+              From AI solutions and business automation to websites, mobile apps, and enterprise
+            platforms built to help you scale.
             </p>
           </div>
 

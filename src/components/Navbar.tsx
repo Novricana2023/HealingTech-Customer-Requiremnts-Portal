@@ -9,6 +9,7 @@ import { brand } from "@/lib/brand";
 
 const navLinks = [
   { label: "About", href: "/#about" },
+  { label: "AI Solutions", href: "/#ai-solutions" },
   { label: "Services", href: "/#services" },
   { label: "Bootcamps", href: "/#bootcamps" },
 ];
