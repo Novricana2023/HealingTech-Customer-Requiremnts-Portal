@@ -37,7 +37,7 @@ export default function BootcampsSection() {
             <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-500">
               {bootcamps.highlights.map((item) => (
                 <li key={item} className="flex items-center gap-2">
-                  <span className="w-1 h-1 rounded-full bg-brand-teal shrink-0" aria-hidden />
+                  <span className="w-1 h-1 rounded-full bg-brand-orange shrink-0" aria-hidden />
                   {item}
                 </li>
               ))}

@@ -23,7 +23,7 @@ export default function VisionMission() {
               </h3>
               <p className="mt-3 text-gray-600 leading-relaxed">{company.mission}</p>
             </article>
-            <blockquote className="pl-5 border-l-2 border-brand-teal">
+            <blockquote className="pl-5 border-l-2 border-brand-orange">
               <p className="font-display text-base text-gray-700 leading-relaxed italic">
                 &ldquo;{company.closingMessage}&rdquo;
               </p>

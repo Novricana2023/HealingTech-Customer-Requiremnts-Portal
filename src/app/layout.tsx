@@ -24,7 +24,7 @@ const sourceSerif = Source_Serif_4({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#14b8a6",
+  themeColor: "#ea580c",
   width: "device-width",
   initialScale: 1,
   colorScheme: "light",
