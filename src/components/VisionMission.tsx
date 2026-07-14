@@ -14,10 +14,7 @@ export default function VisionMission() {
           viewport={{ once: true }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <span className="text-sm font-semibold text-brand-teal uppercase tracking-wider">
-            Our Direction
-          </span>
-          <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900">
             Vision &amp; Mission
           </h2>
           <p className="mt-4 text-lg text-slate-600">{company.tagline}</p>
@@ -28,7 +25,7 @@ export default function VisionMission() {
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="p-8 lg:p-10 rounded-2xl bg-gradient-to-br from-teal-50 to-white border border-teal-100"
+            className="p-8 lg:p-10 rounded-2xl bg-gradient-to-br from-teal-50/80 to-white border border-brand-teal/20"
           >
             <div className="inline-flex p-3 rounded-xl bg-brand-teal text-white mb-6">
               <Eye size={24} />
@@ -41,7 +38,7 @@ export default function VisionMission() {
             initial={{ opacity: 0, x: 24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="p-8 lg:p-10 rounded-2xl bg-gradient-to-br from-blue-50 to-white border border-blue-100"
+            className="p-8 lg:p-10 rounded-2xl bg-gradient-to-br from-cyan-50/80 to-white border border-brand-blue/20"
           >
             <div className="inline-flex p-3 rounded-xl bg-brand-blue text-white mb-6">
               <Target size={24} />

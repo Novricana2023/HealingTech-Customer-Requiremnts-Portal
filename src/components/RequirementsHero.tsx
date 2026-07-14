@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, ClipboardList, FileText } from "lucide-react";
+import { ArrowRight, FileText } from "lucide-react";
 
 export default function RequirementsHero() {
   return (
@@ -11,14 +11,14 @@ export default function RequirementsHero() {
       <div className="relative w-full min-h-[520px] lg:min-h-[580px]">
         <Image
           src="/images/requirements-hero.jpg"
-          alt="Hands on MacBook — project requirements and technology"
+          alt="Hands on MacBook, project requirements and technology"
           fill
           className="object-cover object-center"
           priority
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/75 to-slate-900/60" />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 via-transparent to-slate-900/20" />
+        <div className="absolute inset-0 bg-black/80" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
           <motion.div
@@ -27,14 +27,9 @@ export default function RequirementsHero() {
             transition={{ duration: 0.7 }}
             className="max-w-2xl"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white text-sm font-semibold backdrop-blur-sm">
-              <ClipboardList size={16} />
-              Customer Requirements Collection Portal
-            </div>
-
-            <h1 className="mt-6 text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight tracking-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight tracking-tight">
               Share Your Requirements So We Can{" "}
-              <span className="text-teal-300">Design Your Solution</span>
+              <span className="text-brand-teal-light">Design Your Solution</span>
             </h1>
 
             <p className="mt-5 text-lg text-white/90 leading-relaxed max-w-xl">
@@ -54,7 +49,7 @@ export default function RequirementsHero() {
               </Link>
               <Link
                 href="/"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 font-semibold text-white bg-white/10 border border-white/30 rounded-xl hover:bg-white/20 backdrop-blur-sm transition-all"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 font-semibold text-white bg-brand-navy border border-white/20 rounded-xl hover:bg-brand-navy-dark transition-all"
               >
                 Back to Main Website
               </Link>
@@ -65,12 +60,12 @@ export default function RequirementsHero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="mt-12 p-6 lg:p-8 rounded-2xl bg-white/10 border border-white/20 backdrop-blur-md max-w-4xl"
+            className="mt-12 p-6 lg:p-8 rounded-2xl bg-black/40 border border-white/15 max-w-4xl"
           >
             <div className="flex items-start gap-3">
-              <FileText className="text-teal-300 shrink-0 mt-0.5 hidden sm:block" size={22} />
+              <FileText className="text-brand-teal-light shrink-0 mt-0.5 hidden sm:block" size={22} />
               <p className="text-white/95 text-base lg:text-lg leading-relaxed">
-                <span className="font-semibold text-teal-300">This page is for collecting your project information.</span>{" "}
+                <span className="font-semibold text-brand-teal-light">This page is for collecting your project information.</span>{" "}
                 Choose a service below and open the matching form. The more you
                 tell us, the better we can tailor AI, web apps, mobile apps, websites,
                 or ERP solutions to your needs.

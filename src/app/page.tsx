@@ -8,9 +8,9 @@ import RequirementsCTA from "@/components/RequirementsCTA";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
-  title: "HealingTech Labs | Malawi Software Company — AI, Innovation & Automation",
+  title: "HealingTech Labs | Malawi Software Company | AI, Innovation & Automation",
   description:
-    "HealingTech Labs is a Malawi software company and AI innovation lab. Custom software, websites, mobile apps, business automation, and intelligent systems for organizations in Malawi and worldwide.",
+    "HealingTech Labs is a Malawi software company. Custom software, websites, mobile apps, business automation, and intelligent systems for organizations in Malawi and worldwide.",
   path: "/",
 });
 

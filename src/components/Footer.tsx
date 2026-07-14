@@ -7,55 +7,79 @@ const defaultWhatsAppMessage =
   "Hello HealingTech Labs, I would like to discuss a project.";
 
 export default function Footer() {
+  const year = new Date().getFullYear();
+
   return (
-    <footer className="bg-slate-50 border-t border-slate-200">
+    <footer className="bg-brand-navy-dark text-white border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div>
-            <h3 className="text-xl font-bold text-slate-900">{company.name}</h3>
-            <p className="mt-3 text-slate-600 leading-relaxed">
+            <h3 className="text-xl font-bold text-white">
+              Healing<span className="text-brand-teal-light">Tech</span> Labs
+            </h3>
+            <p className="mt-3 text-slate-300 leading-relaxed">
               {company.tagline}. World-class technology with a mission to transform
               Africa&apos;s digital economy.
             </p>
           </div>
 
           <div>
-            <h4 className="text-sm font-semibold text-slate-900 uppercase tracking-wider mb-4">
+            <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
               Quick Links
             </h4>
             <ul className="space-y-2">
               <li>
-                <Link href="/#about" className="text-slate-600 hover:text-brand-teal transition-colors">
+                <Link
+                  href="/#about"
+                  className="text-slate-300 hover:text-brand-teal-light transition-colors"
+                >
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/#services" className="text-slate-600 hover:text-brand-teal transition-colors">
+                <Link
+                  href="/#services"
+                  className="text-slate-300 hover:text-brand-teal-light transition-colors"
+                >
                   Our Services
                 </Link>
               </li>
               <li>
-                <Link href="/requirements" className="text-slate-600 hover:text-brand-teal transition-colors">
+                <Link
+                  href="/requirements"
+                  className="text-slate-300 hover:text-brand-teal-light transition-colors"
+                >
                   Requirements Portal
                 </Link>
               </li>
               <li>
-                <Link href="/erp-solutions" className="text-slate-600 hover:text-brand-teal transition-colors">
+                <Link
+                  href="/erp-solutions"
+                  className="text-slate-300 hover:text-brand-teal-light transition-colors"
+                >
                   Explore ERP Solutions
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/privacy"
+                  className="text-slate-300 hover:text-brand-teal-light transition-colors"
+                >
+                  Privacy Policy
                 </Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <h4 className="text-sm font-semibold text-slate-900 uppercase tracking-wider mb-4">
+            <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
               Contact
             </h4>
             <ul className="space-y-3">
               <li>
                 <a
                   href={`mailto:${contactInfo.emailTo}`}
-                  className="inline-flex items-center gap-2 text-slate-600 hover:text-brand-teal transition-colors"
+                  className="inline-flex items-center gap-2 text-slate-300 hover:text-brand-teal-light transition-colors"
                 >
                   <Mail size={16} className="shrink-0" />
                   {contactInfo.emailDisplay}
@@ -67,13 +91,11 @@ export default function Footer() {
                     href={whatsappUrl(phone.phone, defaultWhatsAppMessage)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-slate-600 hover:text-brand-teal transition-colors underline-offset-2 hover:underline"
+                    className="inline-flex items-center gap-2 text-slate-300 hover:text-brand-teal-light transition-colors underline-offset-2 hover:underline"
                   >
-                    <MessageCircle size={16} className="shrink-0 text-green-600" />
+                    <MessageCircle size={16} className="shrink-0 text-brand-teal-light" />
                     <span>{phone.display}</span>
-                    <span className="text-xs font-semibold text-green-700 bg-green-50 px-2 py-0.5 rounded-full border border-green-100">
-                      WhatsApp
-                    </span>
+                    <span className="text-xs text-brand-teal-light">WhatsApp</span>
                   </a>
                 </li>
               ))}
@@ -81,8 +103,18 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-slate-200 text-center text-sm text-slate-500">
-          &copy; {new Date().getFullYear()} {company.name}. All rights reserved.
+        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-400">
+          <p>
+            &copy; {year} {company.name}. All rights reserved.
+          </p>
+          <div className="flex items-center gap-6">
+            <Link href="/privacy" className="hover:text-brand-teal-light transition-colors">
+              Privacy Policy
+            </Link>
+            <Link href="/#about" className="hover:text-brand-teal-light transition-colors">
+              About
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

@@ -1,4 +1,4 @@
-/** Production site configuration — HealingTech Labs (primary site) */
+/** Production site configuration for HealingTech Labs (primary site) */
 export const siteConfig = {
   name: "HealingTech Labs",
   shortName: "HealingTech Labs",
@@ -7,12 +7,12 @@ export const siteConfig = {
   country: "Malawi",
   countryCode: "MW",
   defaultTitle:
-    "HealingTech Labs | Malawi Software Company — AI, Innovation & Automation",
+    "HealingTech Labs | Malawi Software Company | AI, Innovation & Automation",
   defaultDescription:
-    "HealingTech Labs is a Malawi software company and AI innovation lab. We build custom software, websites, mobile apps, business automation, and intelligent systems that help organizations in Malawi and worldwide scale.",
+    "HealingTech Labs is a Malawi software company. We build custom software, websites, mobile apps, business automation, and intelligent systems that help organizations in Malawi and worldwide scale.",
   ogImage: "/images/cover-tech-hero.jpg",
   ogImageAlt:
-    "HealingTech Labs — Malawi AI and innovation lab for software and automation",
+    "HealingTech Labs, Malawi software company for software and automation",
   locale: "en_US",
   twitterHandle: "@HealingTechLabs",
   keywords: [
@@ -22,7 +22,6 @@ export const siteConfig = {
     "Malawi software development",
     "technology company Malawi",
     "AI company Malawi",
-    "AI innovation lab Malawi",
     "business automation Malawi",
     "custom software Malawi",
     "web development Malawi",

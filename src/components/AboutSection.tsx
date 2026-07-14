@@ -13,12 +13,10 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <span className="text-sm font-semibold text-brand-teal uppercase tracking-wider">
+            <h2 className="text-3xl sm:text-4xl font-bold text-brand-navy">
               About HealingTech Labs
-            </span>
-            <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-slate-900">
-              Malawi&apos;s AI &amp; Innovation Lab
             </h2>
+            <p className="mt-3 text-lg text-brand-teal font-medium">{company.tagline}</p>
             <p className="mt-6 text-lg text-slate-600 leading-relaxed">{company.about}</p>
             <p className="mt-4 text-lg text-slate-600 leading-relaxed">
               We engineer AI solutions, enterprise systems, e-commerce platforms, digital

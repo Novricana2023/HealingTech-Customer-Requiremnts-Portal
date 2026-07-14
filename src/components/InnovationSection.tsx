@@ -26,10 +26,7 @@ export default function InnovationSection() {
           viewport={{ once: true }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <span className="text-sm font-semibold text-brand-teal uppercase tracking-wider">
-            Innovation at Our Core
-          </span>
-          <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900">
             Smart Systems &amp; Technology Solutions
           </h2>
           <p className="mt-4 text-lg text-slate-600">

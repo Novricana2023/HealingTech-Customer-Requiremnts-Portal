@@ -23,7 +23,7 @@ export default function RequirementsCTA() {
           </h2>
           <p className="mt-4 text-lg text-white/90 leading-relaxed max-w-2xl mx-auto">
             Tell us what you need. Our requirements portal makes it easy to share
-            your vision with HealingTech Labs — select your service, complete the
+            your vision with HealingTech Labs. Select your service, complete the
             form, and our team will design the right solution for you.
           </p>
           <Link

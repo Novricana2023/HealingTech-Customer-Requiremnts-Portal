@@ -42,15 +42,12 @@ export default function Services() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <span className="text-sm font-semibold text-brand-teal uppercase tracking-wider">
-            What We Build
-          </span>
-          <h2 className="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900">
             Our Services
           </h2>
           <p className="mt-4 text-lg text-slate-600">
             From AI and business automation to websites, mobile apps, and enterprise
-            platforms — Malawi&apos;s innovation lab for software that helps you scale.
+            platforms built to help you scale.
           </p>
         </motion.div>
 

@@ -5,7 +5,7 @@ export const services = [
     description:
       "Intelligent assistants, chatbots, document intelligence, and workflow automation powered by cutting-edge AI.",
     icon: "brain",
-    gradient: "from-emerald-500 to-teal-600",
+    gradient: "from-brand-green to-brand-teal",
   },
   {
     id: "website",
@@ -13,7 +13,7 @@ export const services = [
     description:
       "Business websites, government portals, e-commerce platforms, and customer-facing digital experiences.",
     icon: "globe",
-    gradient: "from-blue-500 to-cyan-600",
+    gradient: "from-brand-blue to-brand-cyan",
   },
   {
     id: "webapp",
@@ -21,7 +21,7 @@ export const services = [
     description:
       "Custom web apps, dashboards, SaaS platforms, admin portals, and browser-based tools built for performance and scale.",
     icon: "layout",
-    gradient: "from-indigo-500 to-blue-600",
+    gradient: "from-brand-navy to-brand-blue",
   },
   {
     id: "mobile",
@@ -29,7 +29,7 @@ export const services = [
     description:
       "Native and cross-platform mobile apps for Android, iOS, healthcare, education, and enterprise.",
     icon: "smartphone",
-    gradient: "from-violet-500 to-blue-600",
+    gradient: "from-brand-teal to-brand-cyan",
   },
   {
     id: "software",
@@ -37,7 +37,7 @@ export const services = [
     description:
       "Tailored software solutions built to solve your unique business challenges at scale.",
     icon: "code",
-    gradient: "from-slate-600 to-blue-700",
+    gradient: "from-brand-navy-dark to-brand-navy",
   },
   {
     id: "ml",
@@ -45,7 +45,7 @@ export const services = [
     description:
       "Predictive models, computer vision, NLP systems, and data-driven intelligence for your organization.",
     icon: "cpu",
-    gradient: "from-teal-500 to-emerald-600",
+    gradient: "from-brand-teal to-brand-green",
   },
   {
     id: "analytics",
@@ -53,7 +53,7 @@ export const services = [
     description:
       "Business intelligence dashboards, reporting systems, and actionable insights from your data.",
     icon: "bar-chart",
-    gradient: "from-cyan-500 to-blue-600",
+    gradient: "from-brand-cyan to-brand-blue",
   },
   {
     id: "erp",
@@ -61,7 +61,7 @@ export const services = [
     description:
       "Enterprise resource planning platforms for government, healthcare, education, and business.",
     icon: "building",
-    gradient: "from-blue-600 to-indigo-700",
+    gradient: "from-brand-blue to-brand-navy",
   },
   {
     id: "gov",
@@ -69,7 +69,7 @@ export const services = [
     description:
       "Citizen portals, digital services, and modern infrastructure for public sector organizations.",
     icon: "landmark",
-    gradient: "from-sky-500 to-blue-700",
+    gradient: "from-brand-cyan to-brand-blue",
   },
   {
     id: "bpa",
@@ -77,7 +77,7 @@ export const services = [
     description:
       "Streamline operations with automated workflows, integrations, and intelligent process design.",
     icon: "workflow",
-    gradient: "from-emerald-500 to-cyan-600",
+    gradient: "from-brand-green to-brand-cyan",
   },
   {
     id: "cloud",
@@ -85,7 +85,7 @@ export const services = [
     description:
       "Cloud architecture, migration, deployment, and scalable infrastructure on modern platforms.",
     icon: "cloud",
-    gradient: "from-blue-400 to-teal-500",
+    gradient: "from-brand-teal to-brand-cyan",
   },
 ];
 

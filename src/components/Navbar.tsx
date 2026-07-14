@@ -72,8 +72,8 @@ export default function Navbar() {
                 priority
               />
             </motion.div>
-            <span className="hidden md:block font-semibold text-slate-800 tracking-tight text-base lg:text-lg group-hover:text-brand-teal transition-colors leading-tight">
-              HealingTech <span className="text-brand-teal">Labs</span>
+            <span className="hidden md:block font-semibold text-brand-navy tracking-tight text-base lg:text-lg group-hover:text-brand-teal transition-colors leading-tight">
+              Healing<span className="text-brand-teal">Tech</span> Labs
             </span>
           </Link>
 
