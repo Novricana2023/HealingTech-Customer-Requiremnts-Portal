@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
 @theme {
-  /* HealingTech Labs logo palette */
   --color-brand-navy: #1e3a5f;
   --color-brand-navy-dark: #0f172a;
   --color-brand-teal: #14b8a6;
@@ -12,7 +11,10 @@
   --color-brand-cyan: #06b6d4;
   --color-brand-orange: #f97316;
   --color-brand-coral: #e11d48;
+  --color-surface: #f8f9fa;
+  --color-border: #e5e7eb;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
 }
 
 html {
@@ -21,8 +23,10 @@ html {
 
 body {
   background: #ffffff;
-  color: var(--color-brand-navy-dark);
+  color: #1f2937;
   font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -31,77 +35,132 @@ body {
   outline-offset: 2px;
 }
 
-.gradient-text {
-  background: linear-gradient(
-    135deg,
-    var(--color-brand-navy) 0%,
-    var(--color-brand-teal) 45%,
-    var(--color-brand-cyan) 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+/* Typography */
+.font-display {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--color-brand-navy-dark);
 }
 
-.glass-card {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(226, 232, 240, 0.8);
+.section-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-brand-teal);
 }
 
-.hero-gradient {
-  background: radial-gradient(
-      ellipse 80% 60% at 50% -10%,
-      rgba(20, 184, 166, 0.12),
-      transparent
-    ),
-    radial-gradient(
-      ellipse 60% 40% at 90% 20%,
-      rgba(8, 145, 178, 0.08),
-      transparent
-    ),
-    radial-gradient(
-      ellipse 50% 30% at 10% 60%,
-      rgba(249, 115, 22, 0.06),
-      transparent
-    );
+.section-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(1.625rem, 2.5vw, 2rem);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--color-brand-navy-dark);
 }
 
-.section-divider {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, #e2e8f0, transparent);
+.section-lead {
+  margin-top: 0.75rem;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: #4b5563;
 }
 
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-8px);
+/* Layout */
+.section-padding {
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding-top: 5.5rem;
+    padding-bottom: 5.5rem;
   }
 }
 
-.animate-float {
-  animation: float 6s ease-in-out infinite;
+.container-page {
+  width: 100%;
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
 }
 
-@keyframes shimmer {
-  0% {
-    background-position: -200% center;
-  }
-  100% {
-    background-position: 200% center;
+@media (min-width: 640px) {
+  .container-page {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 }
 
-.nav-shimmer {
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(20, 184, 166, 0.08),
-    transparent
-  );
-  background-size: 200% 100%;
-  animation: shimmer 3s ease-in-out infinite;
+/* Buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: var(--color-brand-navy);
+  border-radius: 0.5rem;
+  transition: background-color 0.15s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-brand-navy-dark);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-brand-navy);
+  background-color: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.btn-secondary:hover {
+  border-color: var(--color-brand-navy);
+}
+
+.btn-on-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-brand-navy-dark);
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  transition: opacity 0.15s ease;
+}
+
+.btn-on-dark:hover {
+  opacity: 0.92;
+}
+
+/* Content blocks */
+.content-rule {
+  border-top: 1px solid var(--color-border);
+}
+
+.stat-value {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--color-brand-navy);
+  letter-spacing: -0.02em;
 }

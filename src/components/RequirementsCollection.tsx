@@ -1,90 +1,67 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { ArrowUpRight, ExternalLink } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 import { requirementCards } from "@/data/site-data";
 
 export default function RequirementsCollection() {
   return (
-    <section id="requirements" className="py-16 lg:py-24 bg-slate-50 border-y border-teal-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center max-w-3xl mx-auto mb-16"
-        >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900">
-            Tell Us What You Need
-          </h2>
-          <p className="mt-4 text-lg text-slate-600">
+    <section id="requirements" className="section-padding bg-[var(--color-surface)]">
+      <div className="container-page">
+        <div className="max-w-2xl mb-12">
+          <p className="section-label">Get started</p>
+          <h2 className="section-heading mt-2">Tell Us What You Need</h2>
+          <p className="section-lead">
             Select the service that best matches your project and complete the
             requirements form.
           </p>
-        </motion.div>
+        </div>
 
-        <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
-          {requirementCards.map((card, index) => (
-            <motion.article
+        <div className="space-y-6">
+          {requirementCards.map((card) => (
+            <article
               key={card.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group relative flex flex-col bg-white rounded-2xl border border-slate-100 overflow-hidden hover:shadow-2xl hover:shadow-slate-900/10 hover:border-teal-200 transition-all duration-300"
+              className="grid md:grid-cols-12 gap-0 bg-white border border-[var(--color-border)] rounded-lg overflow-hidden"
             >
-              <div className="relative h-48 sm:h-56 overflow-hidden">
+              <div className="md:col-span-4 relative min-h-[200px] md:min-h-0">
                 <Image
                   src={card.image}
                   alt={card.title}
                   fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  sizes="(max-width: 768px) 100vw, 33vw"
                   loading="lazy"
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4">
-                  <h3 className="text-xl font-bold text-white">{card.title}</h3>
-                </div>
               </div>
 
-              <div className="flex flex-col flex-1 p-6 lg:p-8">
-                <p className="text-slate-600 leading-relaxed">{card.description}</p>
-                <p className="mt-4 text-sm text-slate-500 italic border-l-2 border-teal-400 pl-3">
+              <div className="md:col-span-8 p-6 lg:p-8 flex flex-col">
+                <h3 className="font-display text-lg text-brand-navy">{card.title}</h3>
+                <p className="mt-3 text-sm text-gray-600 leading-relaxed flex-1">
+                  {card.description}
+                </p>
+                <p className="mt-4 text-sm text-gray-500 italic border-l-2 border-brand-teal pl-3">
                   {card.instruction}
                 </p>
 
-                <div className="mt-6 pt-4 border-t border-slate-100">
+                <div className="mt-6 pt-5 border-t border-[var(--color-border)]">
                   {card.external ? (
                     <a
                       href={card.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-white bg-gradient-to-r from-brand-teal to-brand-blue rounded-xl hover:shadow-lg hover:shadow-teal-500/25 transition-all group/btn"
+                      className="btn-primary"
                     >
                       {card.buttonText}
-                      <ExternalLink
-                        size={16}
-                        className="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform"
-                      />
+                      <ExternalLink size={15} />
                     </a>
                   ) : (
-                    <Link
-                      href={card.href}
-                      className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-white bg-gradient-to-r from-brand-teal to-brand-blue rounded-xl hover:shadow-lg hover:shadow-teal-500/25 transition-all group/btn"
-                    >
+                    <Link href={card.href} className="btn-primary">
                       {card.buttonText}
-                      <ArrowUpRight
-                        size={16}
-                        className="group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform"
-                      />
+                      <ArrowRight size={15} />
                     </Link>
                   )}
                 </div>
               </div>
-            </motion.article>
+            </article>
           ))}
         </div>
       </div>

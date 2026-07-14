@@ -399,17 +399,15 @@ export default function ChatWidget() {
         )}
       </AnimatePresence>
 
-      <motion.button
+      <button
+        type="button"
         onClick={() => (open ? setOpen(false) : openChat())}
-        className="fixed bottom-6 right-6 z-50 flex items-center gap-2 pl-4 pr-5 py-3.5 rounded-full bg-gradient-to-r from-brand-teal to-brand-blue text-white font-semibold shadow-xl shadow-teal-500/30"
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
+        className="fixed bottom-6 right-6 z-50 flex items-center gap-2 pl-4 pr-5 py-3 rounded-lg bg-brand-navy text-white text-sm font-semibold shadow-md"
         aria-label="Open AI Assistant"
       >
-        {!open && <span className="absolute inset-0 rounded-full bg-teal-400 animate-ping opacity-20" />}
-        {open ? <X size={22} className="relative" /> : <Bot size={22} className="relative" />}
-        {!open && <span className="relative text-sm hidden sm:inline">AI Assistant</span>}
-      </motion.button>
+        {open ? <X size={20} /> : <Bot size={20} />}
+        {!open && <span className="hidden sm:inline">AI Assistant</span>}
+      </button>
     </>
   );
 }

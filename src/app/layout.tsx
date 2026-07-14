@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -14,6 +14,13 @@ const inter = Inter({
   variable: "--font-inter",
   display: "swap",
   preload: true,
+});
+
+const sourceSerif = Source_Serif_4({
+  subsets: ["latin"],
+  variable: "--font-serif",
+  display: "swap",
+  weight: ["400", "600"],
 });
 
 export const viewport: Viewport = {
@@ -104,7 +111,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={`${inter.variable} ${sourceSerif.variable}`}>
       <body className="min-h-screen flex flex-col antialiased">
         <OrganizationJsonLd />
         <WebSiteJsonLd />

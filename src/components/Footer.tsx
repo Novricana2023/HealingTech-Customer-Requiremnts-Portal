@@ -11,77 +11,60 @@ export default function Footer() {
 
   return (
     <footer className="bg-brand-navy-dark text-white border-t border-white/10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          <div>
-            <h3 className="text-xl font-bold text-white">
-              Healing<span className="text-brand-teal-light">Tech</span> Labs
-            </h3>
-            <p className="mt-3 text-slate-300 leading-relaxed">
+      <div className="container-page py-12 lg:py-14">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-8">
+          <div className="md:col-span-5">
+            <p className="font-display text-lg text-white">HealingTech Labs</p>
+            <p className="mt-3 text-sm text-gray-400 leading-relaxed max-w-sm">
               {company.tagline}. World-class technology with a mission to transform
               Africa&apos;s digital economy.
             </p>
           </div>
 
-          <div>
-            <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
-              Quick Links
-            </h4>
-            <ul className="space-y-2">
+          <div className="md:col-span-3">
+            <p className="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-4">
+              Quick links
+            </p>
+            <ul className="space-y-2.5 text-sm">
               <li>
-                <Link
-                  href="/#about"
-                  className="text-slate-300 hover:text-brand-teal-light transition-colors"
-                >
+                <Link href="/#about" className="text-gray-300 hover:text-white transition-colors">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/#services"
-                  className="text-slate-300 hover:text-brand-teal-light transition-colors"
-                >
+                <Link href="/#services" className="text-gray-300 hover:text-white transition-colors">
                   Our Services
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/requirements"
-                  className="text-slate-300 hover:text-brand-teal-light transition-colors"
-                >
+                <Link href="/requirements" className="text-gray-300 hover:text-white transition-colors">
                   Requirements Portal
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/erp-solutions"
-                  className="text-slate-300 hover:text-brand-teal-light transition-colors"
-                >
+                <Link href="/erp-solutions" className="text-gray-300 hover:text-white transition-colors">
                   Explore ERP Solutions
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/privacy"
-                  className="text-slate-300 hover:text-brand-teal-light transition-colors"
-                >
+                <Link href="/privacy" className="text-gray-300 hover:text-white transition-colors">
                   Privacy Policy
                 </Link>
               </li>
             </ul>
           </div>
 
-          <div>
-            <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
+          <div className="md:col-span-4">
+            <p className="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-4">
               Contact
-            </h4>
-            <ul className="space-y-3">
+            </p>
+            <ul className="space-y-3 text-sm">
               <li>
                 <a
                   href={`mailto:${contactInfo.emailTo}`}
-                  className="inline-flex items-center gap-2 text-slate-300 hover:text-brand-teal-light transition-colors"
+                  className="inline-flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
                 >
-                  <Mail size={16} className="shrink-0" />
+                  <Mail size={15} className="shrink-0 opacity-70" />
                   {contactInfo.emailDisplay}
                 </a>
               </li>
@@ -91,11 +74,10 @@ export default function Footer() {
                     href={whatsappUrl(phone.phone, defaultWhatsAppMessage)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-slate-300 hover:text-brand-teal-light transition-colors underline-offset-2 hover:underline"
+                    className="inline-flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
                   >
-                    <MessageCircle size={16} className="shrink-0 text-brand-teal-light" />
-                    <span>{phone.display}</span>
-                    <span className="text-xs text-brand-teal-light">WhatsApp</span>
+                    <MessageCircle size={15} className="shrink-0 opacity-70" />
+                    {phone.display}
                   </a>
                 </li>
               ))}
@@ -103,15 +85,15 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-400">
+        <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-gray-500">
           <p>
             &copy; {year} {company.name}. All rights reserved.
           </p>
-          <div className="flex items-center gap-6">
-            <Link href="/privacy" className="hover:text-brand-teal-light transition-colors">
+          <div className="flex items-center gap-5">
+            <Link href="/privacy" className="hover:text-gray-300 transition-colors">
               Privacy Policy
             </Link>
-            <Link href="/#about" className="hover:text-brand-teal-light transition-colors">
+            <Link href="/#about" className="hover:text-gray-300 transition-colors">
               About
             </Link>
           </div>

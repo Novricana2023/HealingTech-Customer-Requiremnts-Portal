@@ -12,16 +12,17 @@ export const metadata = createPageMetadata({
 
 export default function PrivacyPage() {
   return (
-    <div className="pt-24 lg:pt-28 pb-20">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-3xl sm:text-4xl font-bold text-brand-navy">Privacy Policy</h1>
+    <div className="pt-8 pb-16 section-padding">
+      <div className="container-page max-w-3xl">
+        <p className="section-label">Legal</p>
+        <h1 className="section-heading mt-2">Privacy Policy</h1>
         <p className="mt-4 text-slate-600 leading-relaxed">
           Last updated: {new Date().toLocaleDateString("en-US", { month: "long", year: "numeric" })}
         </p>
 
         <div className="mt-10 space-y-8 text-slate-700 leading-relaxed">
           <section>
-            <h2 className="text-xl font-semibold text-brand-navy">Overview</h2>
+            <h2 className="text-base font-semibold text-brand-navy">Overview</h2>
             <p className="mt-3">
               {company.name} (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) respects your privacy.
               This policy explains how we handle information when you visit our website or submit

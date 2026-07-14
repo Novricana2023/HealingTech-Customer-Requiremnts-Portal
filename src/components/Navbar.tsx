@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 import { brand } from "@/lib/brand";
 
 const navLinks = [
@@ -14,142 +13,90 @@ const navLinks = [
   { label: "Services", href: "/#services" },
 ];
 
-const menuVariants = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { staggerChildren: 0.07, delayChildren: 0.1 } },
-  exit: { opacity: 0, transition: { staggerChildren: 0.05, staggerDirection: -1 } },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, x: -16 },
-  visible: { opacity: 1, x: 0 },
-  exit: { opacity: 0, x: -16 },
-};
-
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   useEffect(() => {
     setOpen(false);
   }, [pathname]);
 
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "bg-white/95 backdrop-blur-xl shadow-md border-b border-slate-100"
-          : "bg-white/80 backdrop-blur-md border-b border-slate-100/80"
-      }`}
-    >
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
-        <div
-          className={`flex items-center justify-between transition-all duration-500 ${
-            scrolled ? "h-16 lg:h-[4.5rem]" : "h-[4.5rem] lg:h-20"
-          }`}
-        >
-          <Link href="/" className="flex items-center gap-3 group shrink-0 min-w-0">
-            <motion.div
-              animate={{ scale: scrolled ? 0.95 : 1 }}
-              transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-              className="shrink-0 flex items-center justify-center rounded-xl bg-white border border-slate-200/90 shadow-sm px-3 py-2 sm:px-4 sm:py-2.5 group-hover:border-teal-300 group-hover:shadow-md transition-all"
-            >
-              <Image
-                src={brand.logo}
-                alt={brand.logoAlt}
-                width={180}
-                height={56}
-                className={`w-auto object-contain transition-all duration-300 ${
-                  scrolled ? "h-10 sm:h-11" : "h-11 sm:h-12 lg:h-14"
-                }`}
-                priority
-              />
-            </motion.div>
-            <span className="hidden md:block font-semibold text-brand-navy tracking-tight text-base lg:text-lg group-hover:text-brand-teal transition-colors leading-tight">
-              Healing<span className="text-brand-teal">Tech</span> Labs
-            </span>
+    <header className="sticky top-0 z-50 bg-white border-b border-[var(--color-border)]">
+      <nav className="container-page" aria-label="Main navigation">
+        <div className="flex items-center justify-between h-16 lg:h-[4.25rem]">
+          <Link href="/" className="flex items-center gap-3 shrink-0 min-w-0">
+            <Image
+              src={brand.logo}
+              alt={brand.logoAlt}
+              width={160}
+              height={48}
+              className="h-9 sm:h-10 w-auto object-contain"
+              priority
+            />
           </Link>
 
-          <div className="hidden lg:flex items-center gap-1">
+          <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
-              <Link key={link.href} href={link.href} className="relative px-4 py-2 group">
-                <span className="text-sm font-medium text-slate-600 group-hover:text-brand-teal transition-colors duration-300">
-                  {link.label}
-                </span>
-                <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-gradient-to-r from-brand-teal to-brand-blue rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-sm text-gray-600 hover:text-brand-navy transition-colors"
+              >
+                {link.label}
               </Link>
             ))}
-            <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}>
-              <Link
-                href="/requirements"
-                className="ml-3 px-5 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-brand-teal to-brand-blue rounded-xl hover:shadow-lg hover:shadow-teal-500/30 transition-shadow"
-              >
-                Requirements Portal
-              </Link>
-            </motion.div>
+            <Link href="/requirements" className="btn-primary">
+              Requirements Portal
+            </Link>
           </div>
 
-          <motion.button
-            whileTap={{ scale: 0.9 }}
+          <button
+            type="button"
             onClick={() => setOpen(!open)}
-            className="lg:hidden p-2.5 rounded-xl text-slate-600 hover:bg-teal-50 hover:text-brand-teal transition-colors"
+            className="lg:hidden p-2 text-gray-600 hover:text-brand-navy"
             aria-label="Toggle menu"
             aria-expanded={open}
             aria-controls="mobile-navigation"
           >
-            {open ? <X size={24} /> : <Menu size={24} />}
-          </motion.button>
+            {open ? <X size={22} /> : <Menu size={22} />}
+          </button>
         </div>
       </nav>
 
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:hidden bg-white/98 backdrop-blur-xl border-t border-slate-100 overflow-hidden"
-            id="mobile-navigation"
-          >
-            <motion.div
-              variants={menuVariants}
-              initial="hidden"
-              animate="visible"
-              exit="exit"
-              className="px-4 py-4 space-y-1"
+      {open && (
+        <div
+          id="mobile-navigation"
+          className="lg:hidden border-t border-[var(--color-border)] bg-white"
+        >
+          <div className="container-page py-4 space-y-1">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setOpen(false)}
+                className="block py-3 text-gray-700 hover:text-brand-navy border-b border-gray-100 last:border-0"
+              >
+                {link.label}
+              </Link>
+            ))}
+            <Link
+              href="/requirements"
+              onClick={() => setOpen(false)}
+              className="btn-primary w-full mt-4"
             >
-              {navLinks.map((link) => (
-                <motion.div key={link.href} variants={itemVariants}>
-                  <Link
-                    href={link.href}
-                    onClick={() => setOpen(false)}
-                    className="block px-4 py-3 text-slate-700 font-medium rounded-xl hover:bg-teal-50 hover:text-brand-teal transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </motion.div>
-              ))}
-              <motion.div variants={itemVariants}>
-                <Link
-                  href="/requirements"
-                  onClick={() => setOpen(false)}
-                  className="block mt-2 px-4 py-3 text-center font-semibold text-white bg-gradient-to-r from-brand-teal to-brand-blue rounded-xl shadow-lg shadow-teal-500/20"
-                >
-                  Requirements Portal
-                </Link>
-              </motion.div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+              Requirements Portal
+            </Link>
+          </div>
+        </div>
+      )}
     </header>
   );
 }
