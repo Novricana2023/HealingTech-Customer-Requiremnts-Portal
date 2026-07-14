@@ -8,6 +8,7 @@ import { Menu, X } from "lucide-react";
 import { brand } from "@/lib/brand";
 
 const navLinks = [
+  { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "AI Solutions", href: "/ai-solutions" },
   { label: "Services", href: "/services" },
@@ -61,7 +62,7 @@ export default function Navbar() {
                 </Link>
               );
             })}
-            <Link href="/requirements" className="btn-primary">
+            <Link href="/requirements" className="btn-portal">
               Requirements Portal
             </Link>
           </div>
@@ -105,7 +106,7 @@ export default function Navbar() {
             <Link
               href="/requirements"
               onClick={() => setOpen(false)}
-              className="btn-primary w-full mt-4"
+              className="btn-portal w-full mt-4"
             >
               Requirements Portal
             </Link>

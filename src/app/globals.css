@@ -31,7 +31,7 @@ body {
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-brand-orange);
+  outline: 2px solid var(--color-brand-blue);
   outline-offset: 2px;
 }
 
@@ -47,7 +47,7 @@ body {
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-brand-orange);
+  color: var(--color-brand-blue);
 }
 
 .section-heading {
@@ -95,7 +95,7 @@ body {
   }
 }
 
-/* Buttons */
+/* Buttons — primary CTAs stay solid orange */
 .btn-primary {
   display: inline-flex;
   align-items: center;
@@ -114,6 +114,27 @@ body {
   background-color: var(--color-brand-orange-dark);
   transform: translateY(-1px);
   box-shadow: 0 4px 14px rgba(234, 88, 12, 0.25);
+}
+
+/* Top nav Requirements Portal — solid blue */
+.btn-portal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: var(--color-brand-blue);
+  border-radius: 0.5rem;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-portal:hover {
+  background-color: var(--color-brand-navy);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(8, 145, 178, 0.28);
 }
 
 .btn-secondary {
